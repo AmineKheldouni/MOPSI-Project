@@ -1,6 +1,6 @@
 exec("utils.sci");
 
-// https://www.rocq.inria.fr/mathfi/Premia/
+//https://www.rocq.inria.fr/mathfi/Premia/
 
 d=30;rho=0.0;
 [mu,Gamma] = caracs_sans_actif_sans_risque(d,rho);
