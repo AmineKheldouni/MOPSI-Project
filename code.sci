@@ -15,7 +15,7 @@ sg = [0.2, 0.4];
 
 
 // Probabilité de la variable aléatoire N :
-p1 = 1/2;
+p1 = 0.7;
 p_n = [p1, 1-p1];
 
 // Simulation d'une loi Gaussienne centrée réduite :
@@ -59,7 +59,7 @@ disp(S0)
 // Création de la liste des strikes K_k:
 K = zeros(1,M+1);
 K(1,1)=50;
-for i=2:M+1
+for i=2:M+1 
     K(1,i)= K(1,i-1)+1;
 end
 
@@ -95,13 +95,19 @@ for i=1:p
     end
 end
 
+function valeur=fct_S0( Beta)
+    valeur = 0
+    for i=1:p
+        valeur = valeur + liste_alea(1,i)*Beta(i)*exp(Beta(i+p)*liste_gauss(1,i));
+    end
+endfunction
 
 function valeur=dS0(Beta,i)
     if i>2*p then valeur = 0
     elseif i<=p then
         valeur = liste_alea(1,i)*exp(Beta(i+p)*liste_gauss(1,i))        
     else 
-        valeur = S0 - liste_alea(1,i-p)*Beta(i)*(1-liste_gauss(1,i-p))*exp(Beta(i+p)*liste_gauss(1,i-p))
+        valeur = fct_S0(Beta) - liste_alea(1,i-p)*Beta(i)*(1-liste_gauss(1,i-p))*exp(Beta(i+p)*liste_gauss(1,i-p))
     end
 endfunction
 
@@ -110,7 +116,7 @@ function valeur=fct_d1(Beta)
     valeur = zeros(M+1,p)
     for i=1:p
         for j=1:M+1
-            valeur(j,i) = (log(S0/K(1,j))+(r+0.5*Beta(1,i+p).^2)*t)/(Beta(1,i+p)*sqrt(t));
+            valeur(j,i) = (log(fct_S0(Beta)/K(1,j))+(r+0.5*Beta(1,i+p).^2)*t)/(Beta(1,i+p)*sqrt(t));
     end
     end
 endfunction
@@ -120,7 +126,7 @@ function valeur=fct_d2(Beta)
      valeur = zeros(M+1,p)
     for i=1:p
         for j=1:M+1
-            valeur(j,i) = (log(S0/K(1,j))+(r-0.5*Beta(1,i+p).^2)*t)/(Beta(1,i+p)*sqrt(t));
+            valeur(j,i) = (log(fct_S0(Beta)/K(1,j))+(r-0.5*Beta(1,i+p).^2)*t)/(Beta(1,i+p)*sqrt(t));
     end
     end
 endfunction
@@ -131,11 +137,11 @@ function valeur=Dd1(Beta,i)
     if i>2*p then valeur = zeros(M+1,1)
     elseif i>p then 
         for j=1:M+1
-            valeur(j,1) = ((dS0(Beta,i)/S0+Beta(i)*t)*Beta(i)*sqrt(t)-sqrt(t)*(log(S0/K(1,j))+(r+0.5*Beta(i).^2)*t))/(Beta(i).^2*t)
+            valeur(j,1) = ((dS0(Beta,i)/fct_S0(Beta)+Beta(i)*t)*Beta(i)*sqrt(t)-sqrt(t)*(log(fct_S0(Beta)/K(1,j))+(r+0.5*Beta(i).^2)*t))/(Beta(i).^2*t)
             end
     else
         for j=1:M+1
-            valeur(j,1) = (dS0(Beta,i)/S0)/(Beta(i+p)*sqrt(t))
+            valeur(j,1) = (dS0(Beta,i)/fct_S0(Beta))/(Beta(i+p)*sqrt(t))
             end
     end
 endfunction
@@ -206,7 +212,7 @@ function val_payoff=fct_payoff(Beta)
             Ci_fct = zeros(p,M+1)
             for i=1:M+1
                 for j=1:p
-                Ci_fct(j, i) = Beta(2*p+j)*(S0*fct_normale(d1(i, j)) - K(1,i)*exp(-r*t)*fct_normale(d2(i, j)));
+                Ci_fct(j, i) = Beta(2*p+j)*(fct_S0(Beta)*fct_normale(d1(i, j)) - K(1,i)*exp(-r*t)*fct_normale(d2(i, j)));
                 end
             end
             val_payoff = zeros(1,M+1)
@@ -219,7 +225,7 @@ function val_payoff=fct_payoff(Beta)
             Pi_fct = zeros(p,M+1)
             for i=1:M+1
                 for j=1:p
-                Pi_fct(j, i) = Beta(2*p+j)*(-S0*fct_normale(-d1(i, j)) + K(1,i)*exp(-r*t)*fct_normale(-d2(i, j)));
+                Pi_fct(j, i) = Beta(2*p+j)*(fct_S0(Beta)*fct_normale(-d1(i, j)) + K(1,i)*exp(-r*t)*fct_normale(-d2(i, j)));
                 end
             end
             val_payoff = zeros(1,M+1)
@@ -236,22 +242,26 @@ function valeur=residus(Beta)
     // Calcul de S0 :
     valeur = 100
     // Gestion des contraintes sur les probabilités p_i
-    Beta(3*p) <> 1-sum(Beta(2*p+1:3*p-1))
+
+    if Beta(3*p) <> 1-sum(Beta(2*p+1:3*p-1)) then 
+        valeur = 1000000000000000000000000000000000000
+        end
     for i=1:p
         if Beta(2*p+i)<0 then valeur = 1000000000000000000000000000000000000
         elseif Beta(2*p+i)>1 then valeur = 100000000000000000000000000000000
-        elseif Beta(i+p) == 0 then valeur = 1000000000000000000000000000000000000
+        elseif Beta(i+p) <= 0 then valeur = 1000000000000000000000000000000000000
         end
      end
+     
      if valeur < 1000000000000 then
     // Calcul de d1 & d2 :
             
         if type_operation == "C" then
             C_fct = fct_payoff(Beta)
-            valeur = sum((C_fct-C).^2);
+            valeur = sum((C_fct-C).^2)+norm(Beta-Beta_opt).^2;
         else
             P_fct = fct_payoff(Beta)
-            valeur = sum((P_fct-P).^2);
+            valeur = sum((P_fct-P).^2)+norm(Beta-Beta_opt).^2;
         end
     end
 endfunction
@@ -272,11 +282,10 @@ function gradient=grad_residus(Beta)
                     der_d1p = Dd1(Beta,i+p)
                     der_d2p = Dd2(Beta,i+p)
                     pay_off = (fct_payoff(Beta)-C)
-                    liste_partielle(j,i) = 2*Beta(2*p+i)*pay_off(1,j)*(dS0(Beta,i)*fct_normale(d1(j,i))+S0*df_normale(d1(j,i))*der_d1(j,1)-K(1,j)*exp(-r*t)*der_d2(j,1)*df_normale(d2(j,i)))
-                    liste_partielle(j,i+p) = 2*Beta(2*p+i)*pay_off(1,j)*(dS0(Beta,i+p)*fct_normale(d1(j,i))+S0*df_normale(d1(j,i))*der_d1p(j,1)-K(1,j)*exp(-r*t)*der_d2p(j,1)*df_normale(d2(j,i)))
-                    liste_partielle(j,i+2*p) = 2*pay_off(1,j)*(S0*fct_normale(d1(j,i))-K(1,j)*exp(-r*t)*fct_normale(d2(j,i)))
+                    liste_partielle(j,i) = 2*Beta(2*p+i)*pay_off(1,j)*(dS0(Beta,i)*fct_normale(d1(j,i))+fct_S0(Beta)*df_normale(d1(j,i))*der_d1(j,1)-K(1,j)*exp(-r*t)*der_d2(j,1)*df_normale(d2(j,i)))
+                    liste_partielle(j,i+p) = 2*Beta(2*p+i)*pay_off(1,j)*(dS0(Beta,i+p)*fct_normale(d1(j,i))+fct_S0(Beta)*df_normale(d1(j,i))*der_d1p(j,1)-K(1,j)*exp(-r*t)*der_d2p(j,1)*df_normale(d2(j,i)))
+                    liste_partielle(j,i+2*p) = 2*pay_off(1,j)*(fct_S0(Beta)*fct_normale(d1(j,i))-K(1,j)*exp(-r*t)*fct_normale(d2(j,i)))
                 end
-               
     end
 end
 for i=1:p
@@ -290,20 +299,19 @@ endfunction
 
 function [f,g,ind]=fct_objective(x, ind)
     f = residus(x);
-    g = grad_residus(x)
+    g = grad_residus(x)+2*(x-Beta_opt);
 endfunction
 
-Beta0 = [70, 70, 0.01, 0.01, 0, 0]
-
-Beta_inf = [60, 60, 0, 0, 0, 0]
-Beta_sup = [100, 100, 1, 1, 1, 1]
-
-[fopt,xopt] = optim(fct_objective, "b", Beta_inf, Beta_sup, Beta0)
+Beta0 = [50, 50, 0.2, 0.2, 0.4, 0.4]
+    
+Beta_inf = [50, 50, 0.001, 0.001, 0, 0]
+Beta_sup = [150, 150, 0.6, 0.6, 1, 1]
+[fopt,xopt] = optim(fct_objective, "b", Beta_inf, Beta_sup, Beta0, "qn")
 
 disp("xopt = ")
 disp(xopt)
+disp(fopt)
 
-disp(residus(xopt))
 /////////////////////////////////////////////////////////////////////////////
 // Mouvement Brownien
 mu = 0;
