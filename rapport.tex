@@ -1,0 +1,73 @@
+\documentclass[12pt]{article}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc} % Required for inputting international characters
+\usepackage[T1]{fontenc} % Output font encoding for international characters
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{bbm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{eqnarray}
+\usepackage[frenchb]{babel}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% dimensions choisies par l'utilisateur (bricolage personnel)
+
+\newdimen\decalage
+\newcommand{\bigO}[1]{\ensuremath{\mathop{}\mathopen{}O\mathopen{}\left(#1\right)}}
+\newcommand{\smallO}[1]{\ensuremath{\mathop{}\mathopen{}o\mathopen{}\left(#1\right)}}
+\paperheight=29.7 true cm \paperwidth=21 true cm
+\textheight=23 true cm \textwidth=17 true cm
+\decalage=0 true cm
+
+% dÃ©duction de \topmargin,
+% \evensidemargin et \oddsidemargin
+
+\oddsidemargin=\paperwidth
+\advance\oddsidemargin by -\textwidth
+\divide\oddsidemargin by 2
+\advance\oddsidemargin by -1 in
+\evensidemargin=\oddsidemargin
+\advance\oddsidemargin by \decalage
+\advance\evensidemargin by -\decalage
+
+\topmargin=\paperheight
+\advance\topmargin by -\headheight
+\advance\topmargin by -\headsep
+\advance\topmargin by -\textheight
+\advance\topmargin by -\footskip
+\divide\topmargin by 2
+\advance\topmargin by -1 in
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{figure}[t]
+\begin{center}
+	\includegraphics[scale=0.1]{header_logo.png}
+\end{center}
+\end{figure}
+
+\title{Rapport projet MOPSI : Calibration en finance, Mélanges de modèles de Black-Scholes}
+\author{Mohammed Amine KHELDOUNI}
+\date{19n janvier 2017}
+\maketitle
+\renewcommand{\contentsname}{Table des matières}
+\tableofcontents
+\newpage
+\section{Préliminaires}
+
+\section{Optimisation des prix du marché}
+\subsection{Formule de Black-Scholes}
+\subsection{Minimisation des résidus}
+
+\section{Volatilité implicite}
+\subsection{Inversion de la formule de Black-Scholes}
+\subsection{Smiles de volatilité}
+
+
+\end{document}

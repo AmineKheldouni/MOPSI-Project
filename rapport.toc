@@ -1,0 +1,8 @@
+\select@language {french}
+\contentsline {section}{\numberline {1}Pr\IeC {\'e}liminaires}{2}
+\contentsline {section}{\numberline {2}Optimisation des prix du march\IeC {\'e}}{2}
+\contentsline {subsection}{\numberline {2.1}Formule de Black-Scholes}{2}
+\contentsline {subsection}{\numberline {2.2}Minimisation des r\IeC {\'e}sidus}{2}
+\contentsline {section}{\numberline {3}Volatilit\IeC {\'e} implicite}{2}
+\contentsline {subsection}{\numberline {3.1}Inversion de la formule de Black-Scholes}{2}
+\contentsline {subsection}{\numberline {3.2}Smiles de volatilit\IeC {\'e}}{2}

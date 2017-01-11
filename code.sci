@@ -3,10 +3,10 @@ funcprot(0);
 r = 0;
 t = 1;
 // Nombre de modèles mélangés :
-p = 2;
+p = 1;
 M = 10;
 // Valeurs du sous jacent (l'actif) :
-lbd = [100, 100];
+lbd = [80, 100];
 
 
 // Valeurs des écarts types sur un an dans le modèle de Black Scholes :
@@ -15,13 +15,13 @@ sg = [0.2, 0.4];
 
 
 // Probabilité de la variable aléatoire N :
-p1 = 0.7;
+p1 = 1;
 p_n = [p1, 1-p1];
 
 // Simulation d'une loi Gaussienne centrée réduite :
 G = grand(1, p, 'nor', 0, 1);
 
-// Put ou Call 
+// Put ou Call
 type_operation = "C"
 
 // Tirage aléatoire d'une variable uniforme avec probabilité p_n :
@@ -59,7 +59,7 @@ disp(S0)
 // Création de la liste des strikes K_k:
 K = zeros(1,M+1);
 K(1,1)=50;
-for i=2:M+1 
+for i=2:M+1
     K(1,i)= K(1,i-1)+1;
 end
 
@@ -68,7 +68,7 @@ end
 // Création de la fonction pour le calcul des Payoffs :
 function phi_k=payoff(x,k,s)
     if s=="P" then phi_k = max(0, -x+K(1,1+k))
-    else  
+    else
         phi_k = max(0, x-K(1,1+k))
     end
 endfunction
@@ -89,7 +89,7 @@ d1 = zeros(M+1, p);
 d2 = zeros(M+1, p);
 
 for i=1:p
-    for j=1:M+1   
+    for j=1:M+1
         d1(j, i) = (log(S0/K(1, j))+(r+0.5*sg(i)**2)*t)/(sg(i)*sqrt(t));
         d2(j, i) = d1(j, i) - sg(i)*sqrt(t);
     end
@@ -105,8 +105,8 @@ endfunction
 function valeur=dS0(Beta,i)
     if i>2*p then valeur = 0
     elseif i<=p then
-        valeur = liste_alea(1,i)*exp(Beta(i+p)*liste_gauss(1,i))        
-    else 
+        valeur = liste_alea(1,i)*exp(Beta(i+p)*liste_gauss(1,i))
+    else
         valeur = fct_S0(Beta) - liste_alea(1,i-p)*Beta(i)*(1-liste_gauss(1,i-p))*exp(Beta(i+p)*liste_gauss(1,i-p))
     end
 endfunction
@@ -135,7 +135,7 @@ endfunction
 function valeur=Dd1(Beta,i)
     valeur = zeros(M+1,1)
     if i>2*p then valeur = zeros(M+1,1)
-    elseif i>p then 
+    elseif i>p then
         for j=1:M+1
             valeur(j,1) = ((dS0(Beta,i)/fct_S0(Beta)+Beta(i)*t)*Beta(i)*sqrt(t)-sqrt(t)*(log(fct_S0(Beta)/K(1,j))+(r+0.5*Beta(i).^2)*t))/(Beta(i).^2*t)
             end
@@ -168,7 +168,7 @@ end
 C = zeros(1,M+1)
 for i=1:M+1
     for j=1:p
-        C(1,i) = C(1,i)+Ci(j,i) 
+        C(1,i) = C(1,i)+Ci(j,i)
     end
 end
 
@@ -187,7 +187,7 @@ end
 P = zeros(1,M+1)
 for i=1:M+1
     for j=1:p
-        P(1,i) = P(1,i)+ Pi(j,i) 
+        P(1,i) = P(1,i)+ Pi(j,i)
     end
 end
 
@@ -218,7 +218,7 @@ function val_payoff=fct_payoff(Beta)
             val_payoff = zeros(1,M+1)
             for i=1:M+1
                 for j=1:p
-                    val_payoff(1,i) = val_payoff(1,i)+Ci_fct(j,i) 
+                    val_payoff(1,i) = val_payoff(1,i)+Ci_fct(j,i)
                 end
             end
         else
@@ -231,31 +231,20 @@ function val_payoff=fct_payoff(Beta)
             val_payoff = zeros(1,M+1)
             for i=1:M+1
                 for j=1:p
-                    val_payoff(1,i) = val_payoff(1,i)+ Pi_fct(j,i) 
+                    val_payoff(1,i) = val_payoff(1,i)+ Pi_fct(j,i)
                 end
             end
         end
 endfunction
 
-function valeur=residus(Beta) 
+function valeur=residus(Beta)
     //A Beta connu, renvoit Somme sur les strikes de (E(phi_k)-alpha_k)**2
     // Calcul de S0 :
-    valeur = 100
-    // Gestion des contraintes sur les probabilités p_i
+    valeur = %inf
 
-    if Beta(3*p) <> 1-sum(Beta(2*p+1:3*p-1)) then 
-        valeur = 1000000000000000000000000000000000000
-        end
-    for i=1:p
-        if Beta(2*p+i)<0 then valeur = 1000000000000000000000000000000000000
-        elseif Beta(2*p+i)>1 then valeur = 100000000000000000000000000000000
-        elseif Beta(i+p) <= 0 then valeur = 1000000000000000000000000000000000000
-        end
-     end
-     
-     if valeur < 1000000000000 then
+     if sum(Beta(2*p+1:3*p))>=0.99 then
     // Calcul de d1 & d2 :
-            
+
         if type_operation == "C" then
             C_fct = fct_payoff(Beta)
             valeur = sum((C_fct-C).^2)+norm(Beta-Beta_opt).^2;
@@ -265,7 +254,7 @@ function valeur=residus(Beta)
         end
     end
 endfunction
-
+disp("residus(B*) : ")
 disp(residus(Beta_opt))
 
 
@@ -297,16 +286,20 @@ for i=1:p
 end
 endfunction
 
+disp("grad residus(B*) :")
+disp(grad_residus(Beta_opt))
+
 function [f,g,ind]=fct_objective(x, ind)
     f = residus(x);
-    g = grad_residus(x)+2*(x-Beta_opt);
+    g = grad_residus(x);
 endfunction
 
-Beta0 = [50, 50, 0.2, 0.2, 0.4, 0.4]
-    
-Beta_inf = [50, 50, 0.001, 0.001, 0, 0]
-Beta_sup = [150, 150, 0.6, 0.6, 1, 1]
-[fopt,xopt] = optim(fct_objective, "b", Beta_inf, Beta_sup, Beta0, "qn")
+Beta0 = [70, 0.1, 0.5]
+
+Beta_inf = [50, 0.001, 0]
+Beta_sup = [150, 0.9, 1]
+
+[fopt,xopt] = optim(fct_objective, "b", Beta_inf, Beta_sup, Beta0, "gc")
 
 disp("xopt = ")
 disp(xopt)
