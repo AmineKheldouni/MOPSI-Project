@@ -25,9 +25,13 @@ function valeur=residus(Beta_c,C,K)
 endfunction
 
 r = 0.033;
-T = 0.13;
-S0 = 505.15;// Valeurs du sous jacent (l'actif) :
-
+//r = 0;
+T = 1;
+//r = 0.533;
+//T = 0.13;
+//S0 = 100;// Valeurs du sous jacent (l'actif) :
+//S0 = 630.15;
+S0 = 505.15;
 p = 2;// Nombre de modèles mélangés :
 sigma = [0.2, 0.4];// volatilités sur un an dans le modèle de Black Scholes
 proba = ones(1,p)/p;
@@ -37,46 +41,49 @@ M= 100;
 C = zeros(1, M+1);
 K = zeros(1, M+1);
 for i=[1:M+1] do
-  K(i)=400+(i-1);
+  K(i)=500+(i-1);
   C(i)=prix_melange("C",0,T,K(i),r,proba,sigma,S0*ones(1,p));
 end
 
 //plot(K,C);
 
 //Beta0 = [100, 100, 0.2, 0.4, 0.5, 0.5];
-Beta0 = [100, 100, 0.3, 0.5, 0.3, 0.7];
+Beta0 = [100, 100, 0.15, 0.3, 0.3, 0.7];
 Beta_c = Beta0(1:prod(size(Beta0))-1);
 
 
-function [Y]=der_prix_melange(type_operation, t, T, r, sigma, x, d)
-  Y = zeros(1,M+1);
-  if d>2*p then
-    for k=1:M+1 do
-        Y(1,k) = prix_call(t,T,K(k),r,sigma(modulo(d,p)+1),x(modulo(d,p)+1));
-    end
-  elseif d > p then
-    for j=1:M+1 do
-      for k=1:p do
-          Y(1,j) =  Y(1,j) + proba(k) * prix_call_der(t,T,K(j),r,sigma(k),x(k),d);
-      end
-    end
-  else
-    for j=1:M+1 do
-      for i=1:p do
-        Y(1,j) =  Y(1,j) + proba(i) * prix_call_der(t,T,K(j),r,sigma(i),x(i),d);
-      end
-    end
-  end
-endfunction
-
 function [Y]=grad_residus(Beta,C,K)
-  Y = zeros(1,3*p);
+  Y = zeros(1,3*p-1);
+  G = zeros(p+1,M+1);
   C_fct = zeros(1,M+1);
   for i=1:M+1 do
     C_fct(1,i) = prix_melange("C",0,T,K(i),r,Beta(2*p+1:3*p),Beta(p+1:2*p),Beta(1:p));
   end
-  for i=1:3*p do
-    Y(1,i) = 2*sum((C_fct-C).*der_prix_melange("C",0,T,r,Beta(p+1:2*p),Beta(1:p),i));
+  sigma = Beta(p+1:2*p);
+  x = Beta(1:p);
+  proba = Beta(2*p+1:3*p);
+  for d=1:3*p-1 do
+    if d>2*p then
+        for j=1:M+1
+          G(p+1,j) = 2*(C_fct(j)-C(j))*prix_call(0,T,K(j),r,sigma(modulo(d,p)),x(modulo(d,p)));
+        end
+        Y(d) = sum(G(p+1,:));
+    elseif d>p then
+      for i=1:p
+        for j=1:M+1
+          G(i,j) = 2*(C_fct(j)-C(j))*proba(i)*prix_call_der(0,T,K(j),r,sigma(i),x(i),d);
+        end
+      end
+      Y(d) = sum(G);
+    else
+      for i=1:p
+        for j=1:M+1
+          G(i,j) = 2*(C_fct(j)-C(j))*proba(i)*prix_call_der(0,T,K(j),r,sigma(i),x(i),d);
+        end
+      end
+      Y(d) = sum(G);
+    end
+    G = zeros(p+1,M+1);
   end
 endfunction
 
@@ -87,6 +94,9 @@ function [f,g,ind]=fct_objective(Beta_c,ind)
   g=grad_residus(Beta,C,K);
 endfunction
 
-Beta_inf = [30; 30; 0.1; 0.1; 0]
-Beta_sup = [200; 200; 5; 5; 2]
-//[fopt,xopt] = optim(fct_objective,"b", Beta_inf, Beta_sup, Beta_c)
+Beta_inf = [30; 30; 30; 0.1; 0.1;0.1; 0;0]
+Beta_sup = [200; 200; 200; 5; 5; 5; 1;1]
+//[fopt,xopt] = optim(fct_objective, Beta_c)
+
+//disp(xopt)
+//disp(fopt)

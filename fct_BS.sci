@@ -8,12 +8,12 @@ function [Y]=d1(t,T,K,r,sigma,x)
   end
 endfunction
 
-function [Y]=Dd1(t,T,r,sigma,x,d,K)
+function [Y]=Dd1(t,T,K,r,sigma,x,d)
    if d>2*p then Y = 0
    elseif d>p then
        //Y = -(log(x/K)+(r+(sigma^2)/2)*t)/(sqrt(T-t)*sigma^2)
        //+((log(x/K)+sigma*t)/(sigma*sqrt(T-t)));
-       Y = x*sqrt(T)/sqrt(2*%pi)*exp(-((d1(t,T,K,r,sigma,x))^2)/2);
+       Y = -d1(t,T,K,r,sigma,x)/sigma+sqrt(T-t);
    else
        Y = 1/(x*sigma*sqrt(T-t));
    end
@@ -37,13 +37,13 @@ function [Y]= prix_call(t,T,K,r,sigma,x)
     Y=x*N(d_1)-K*exp(-r*(T-t))*N(d_2);
 endfunction
 
-function [Y]= prix_call_der(t,T,K,r, sigma, x, d)
+function [Y]= prix_call_der(t, T, K, r, sigma, x, d)
   d_1 = d1(t,T,K,r,sigma,x)
   if d > 2*p then Y = 0
   elseif d > p then
-    Y = x*Dd1(t,T,r,sigma,x,d,K)*dN(d_1)-K*exp(-r*(T-t))*(Dd1(t,T,r,sigma,x,d,K)-sqrt(T-t))*dN(d_1 - sigma*sqrt(T-t));
+    Y = x*Dd1(t,T,K,r,sigma,x,d)*dN(d_1)-K*exp(-r*(T-t))*(Dd1(t,T,K,r,sigma,x,d)-sqrt(T-t))*dN(d_1 - sigma*sqrt(T-t));
   else
-    Y = N(d_1)+x*Dd1(t,T,r,sigma,x,d,K)*dN(d_1) - K*exp(-r*(T-t))*Dd1(t,T,r,sigma,x,d,K)*dN(d_1 - sigma*sqrt(T-t));
+    Y = N(d_1)+x*Dd1(t,T,K,r,sigma,x,d)*dN(d_1) - K*exp(-r*(T-t))*Dd1(t,T,K,r,sigma,x,d)*dN(d_1 - sigma*sqrt(T-t));
   end
 endfunction
 

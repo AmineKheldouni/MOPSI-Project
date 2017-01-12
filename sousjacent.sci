@@ -19,4 +19,4 @@ for i=1:T_tot do
   S(1,i) = S_t(20,0,temps(1,i),0.5);
 end
 
-plot(temps,S);
+//plot(temps,S);
