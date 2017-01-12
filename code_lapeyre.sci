@@ -33,7 +33,7 @@ sigma = [0.2, 0.4];// volatilités sur un an dans le modèle de Black Scholes
 proba = ones(1,p)/p;
 Beta_opt = [100, 100, 0.2, 0.4, 1/2, 1/2];
 // Prix d'un call : (alpha_k d'un Call)
-M=20;
+M=100;
 C = zeros(1, M+1);
 K = zeros(1, M+1);
 for i=[1:M+1] do

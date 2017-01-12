@@ -34,16 +34,16 @@ function [Y]= prix_call(t,T,K,r,sigma,x)
 // Prix du call dans la formule de Black et Scholes
     d_1=d1(t,T,K,r,sigma,x);
     d_2=d_1 - sigma*sqrt(T-t);
-    Y=x*N(d_1)-K*exp(-r*T)*N(d_2);
+    Y=x*N(d_1)-K*exp(-r*(T-t))*N(d_2);
 endfunction
 
 function [Y]= prix_call_der(t,T,K,r, sigma, x, d)
   d_1 = d1(t,T,K,r,sigma,x)
   if d > 2*p then Y = 0
   elseif d > p then
-    Y = x*Dd1(t,T,r,sigma,x,d,K)*dN(d_1)-K*exp(-r*T)*(Dd1(t,T,r,sigma,x,d,K)-sqrt(T-t))*dN(d_1 - sigma*sqrt(T-t));
+    Y = x*Dd1(t,T,r,sigma,x,d,K)*dN(d_1)-K*exp(-r*(T-t))*(Dd1(t,T,r,sigma,x,d,K)-sqrt(T-t))*dN(d_1 - sigma*sqrt(T-t));
   else
-    Y = N(d_1)+x*Dd1(t,T,r,sigma,x,d,K)*dN(d_1) - K*exp(-r*T)*Dd1(t,T,r,sigma,x,d,K)*dN(d_1 - sigma*sqrt(T-t));
+    Y = N(d_1)+x*Dd1(t,T,r,sigma,x,d,K)*dN(d_1) - K*exp(-r*(T-t))*Dd1(t,T,r,sigma,x,d,K)*dN(d_1 - sigma*sqrt(T-t));
   end
 endfunction
 
@@ -51,7 +51,7 @@ function [Y]= prix_put(t,T,K,r,sigma,x)
 // Prix du put dans la formule de Black et Scholes
     d_1=d1(t,T,K,r,sigma,x);
     d_2=d_1 - sigma*sqrt(T-t);
-    Y=-x*N(-d_1)+K*exp(-r*T)*N(-d_2);
+    Y=-x*N(-d_1)+K*exp(-r*(T-t))*N(-d_2);
 endfunction
 
 function [Y]= prix_call_melange(t,T,K,r,proba,sigma,x)

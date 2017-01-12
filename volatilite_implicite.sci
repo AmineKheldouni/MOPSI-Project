@@ -27,6 +27,36 @@ function [Y]=volatilite_implicite(t,T,K,r,sigma,x)
   end
 endfunction
 
+function [Y]=volatilite_implicite2(K)
+  x0 = 0;
+  y0 = 1;
+  for i=1:50 do
+    z = 0.5*(x0+y0);
+    if f(0,1,K,0,z/(1-z),S0)<0 then
+      x0 = z;
+    else
+      y0 = z;
+    end
+  end
+  z = 0.5*(x0+y0);
+  Y = z/(1-z);
+endfunction
+
+n = prod(size(K));
+sgimpl2 = zeros(1,n);
+for i=1:n
+  sgimpl2(1,i) = volatilite_implicite2(K(1,i));
+end
+
+//plot(K,sgimpl2);
+
+C_bs = zeros(1,n);
+for i=1:n
+  C_bs(i) = f(0,1,K(i),0,sgimpl2(i),S0);
+end;
+plot(sgimpl2,C_bs);
+
+
 Moneyness = zeros(1,M+1);
 I = 4;
 Maturity = zeros(1,I);
@@ -109,4 +139,4 @@ for i=1:pas
   end
 end
 
-plot3d(tt,m,sg_imp);
+//plot3d(tt,m,sg_imp);
