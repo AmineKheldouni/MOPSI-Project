@@ -2,7 +2,7 @@
 exec('/home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/code_lapeyre.sci', -1)
 
 
-Call_market = 20;
+Call_market = 32.4;
 
 function [Y]=f(t,T,K,r,sigma,x)
   Y = prix_call(t,T,K,r,sigma,x)-Call_market;
@@ -53,8 +53,9 @@ end
 C_bs = zeros(1,n);
 for i=1:n
   C_bs(i) = f(0,1,K(i),0,sgimpl2(i),S0);
+  ;
 end;
-plot(sgimpl2,C_bs);
+//plot(sgimpl2,C_bs);
 
 
 Moneyness = zeros(1,M+1);
@@ -119,7 +120,7 @@ function [sigmaC,sigmaP]=bsimpvol(option,S,K,r,T,sigma0);
   //if inf==1 then disp('Put: good convergence'); else disp('Put: bad convergence'); end
 endfunction
 
-pas = 4;
+pas = 100;
 m = zeros(1,M+1);
 tt = zeros(1, pas);
 
@@ -128,15 +129,20 @@ for i=1:M+1
 end
 
 for i=1:pas
-  tt(1,i) = i*I/10;
+  tt(1,i) = i*T/pas;
 end
 
 sg_imp = zeros(pas,M+1);
 
 for i=1:pas
   for j=1:M+1
-    sg_imp(i,j) = bsimpvol(30,S0,K(j),0,tt(1,i),0.3)
+    sg_imp(i,j) = bsimpvol(Call_market,S0,K(j),r,tt(1,i),0.2)
   end
 end
 
-//plot3d(tt,m,sg_imp);
+cmap=hotcolormap(40);
+f=gcf();//figure courante
+f.color_map=cmap;
+
+plot3d(tt,m,sg_imp);
+//plot(m,sg_imp(1,:));

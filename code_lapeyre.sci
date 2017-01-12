@@ -24,20 +24,20 @@ function valeur=residus(Beta_c,C,K)
   end
 endfunction
 
-r = 0;
-T = 1;
-S0 = 100;// Valeurs du sous jacent (l'actif) :
+r = 0.033;
+T = 0.13;
+S0 = 505.15;// Valeurs du sous jacent (l'actif) :
 
 p = 2;// Nombre de modèles mélangés :
 sigma = [0.2, 0.4];// volatilités sur un an dans le modèle de Black Scholes
 proba = ones(1,p)/p;
 Beta_opt = [100, 100, 0.2, 0.4, 1/2, 1/2];
 // Prix d'un call : (alpha_k d'un Call)
-M=100;
+M= 100;
 C = zeros(1, M+1);
 K = zeros(1, M+1);
 for i=[1:M+1] do
-  K(i)=50+(i-1);
+  K(i)=400+(i-1);
   C(i)=prix_melange("C",0,T,K(i),r,proba,sigma,S0*ones(1,p));
 end
 
