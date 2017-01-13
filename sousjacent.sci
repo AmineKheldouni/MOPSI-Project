@@ -1,5 +1,5 @@
 
-exec('/home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/code_lapeyre.sci', -1)
+exec('/home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/code_ameliore.sci', -1)
 
 function [Y]=W_t(t)
   Y = grand(1,1,"nor",0,t);
