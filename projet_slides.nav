@@ -1,0 +1,85 @@
+\beamer@endinputifotherversion {3.36pt}
+\headcommand {\slideentry {0}{0}{1}{1/1}{}{0}}
+\headcommand {\beamer@framepages {1}{1}}
+\headcommand {\slideentry {0}{0}{2}{2/2}{}{0}}
+\headcommand {\beamer@framepages {2}{2}}
+\headcommand {\sectionentry {1}{Pr\IeC {\'e}sentation du probl\IeC {\`e}me}{3}{Pr\IeC {\'e}sentation du probl\IeC {\`e}me}{0}}
+\headcommand {\beamer@sectionpages {1}{2}}
+\headcommand {\beamer@subsectionpages {1}{2}}
+\headcommand {\slideentry {1}{0}{1}{3/3}{}{0}}
+\headcommand {\beamer@framepages {3}{3}}
+\headcommand {\beamer@subsectionentry {0}{1}{1}{4}{D\IeC {\'e}finition des param\IeC {\`e}tres}}\headcommand {\beamer@subsectionpages {3}{3}}
+\headcommand {\slideentry {1}{1}{1}{4/4}{D\IeC {\'e}finition des param\IeC {\`e}tres}{0}}
+\headcommand {\beamer@framepages {4}{4}}
+\headcommand {\beamer@subsectionentry {0}{1}{2}{5}{Description du mod\IeC {\`e}le}}\headcommand {\beamer@subsectionpages {4}{4}}
+\headcommand {\slideentry {1}{2}{1}{5/5}{Description du mod\IeC {\`e}le}{0}}
+\headcommand {\beamer@framepages {5}{5}}
+\headcommand {\slideentry {1}{2}{2}{6/6}{Description du mod\IeC {\`e}le}{0}}
+\headcommand {\beamer@framepages {6}{6}}
+\headcommand {\sectionentry {2}{Mod\IeC {\'e}lisation math\IeC {\'e}matique du march\IeC {\'e}}{7}{Mod\IeC {\'e}lisation math\IeC {\'e}matique du march\IeC {\'e}}{0}}
+\headcommand {\beamer@sectionpages {3}{6}}
+\headcommand {\beamer@subsectionpages {5}{6}}
+\headcommand {\slideentry {2}{0}{1}{7/7}{}{0}}
+\headcommand {\beamer@framepages {7}{7}}
+\headcommand {\slideentry {2}{0}{2}{8/8}{}{0}}
+\headcommand {\beamer@framepages {8}{8}}
+\headcommand {\slideentry {2}{0}{3}{9/9}{}{0}}
+\headcommand {\beamer@framepages {9}{9}}
+\headcommand {\slideentry {2}{0}{4}{10/10}{}{0}}
+\headcommand {\beamer@framepages {10}{10}}
+\headcommand {\slideentry {2}{0}{5}{11/11}{}{0}}
+\headcommand {\beamer@framepages {11}{11}}
+\headcommand {\slideentry {2}{0}{6}{12/12}{}{0}}
+\headcommand {\beamer@framepages {12}{12}}
+\headcommand {\sectionentry {3}{Optimisation des param\IeC {\`e}tres du march\IeC {\'e}}{13}{Optimisation des param\IeC {\`e}tres du march\IeC {\'e}}{0}}
+\headcommand {\beamer@sectionpages {7}{12}}
+\headcommand {\beamer@subsectionpages {7}{12}}
+\headcommand {\slideentry {3}{0}{1}{13/13}{}{0}}
+\headcommand {\beamer@framepages {13}{13}}
+\headcommand {\slideentry {3}{0}{2}{14/14}{}{0}}
+\headcommand {\beamer@framepages {14}{14}}
+\headcommand {\slideentry {3}{0}{3}{16/16}{}{0}}
+\headcommand {\beamer@framepages {16}{16}}
+\headcommand {\sectionentry {4}{Probl\IeC {\`e}mes de calibration}{17}{Probl\IeC {\`e}mes de calibration}{0}}
+\headcommand {\beamer@sectionpages {13}{16}}
+\headcommand {\beamer@subsectionpages {13}{16}}
+\headcommand {\slideentry {4}{0}{1}{17/17}{}{0}}
+\headcommand {\beamer@framepages {17}{17}}
+\headcommand {\slideentry {4}{0}{2}{18/18}{}{0}}
+\headcommand {\beamer@framepages {18}{18}}
+\headcommand {\sectionentry {5}{Formule de Black-Scholes invers\IeC {\'e}e}{19}{Formule de Black-Scholes invers\IeC {\'e}e}{0}}
+\headcommand {\beamer@sectionpages {17}{18}}
+\headcommand {\beamer@subsectionpages {17}{18}}
+\headcommand {\slideentry {5}{0}{1}{19/19}{}{0}}
+\headcommand {\beamer@framepages {19}{19}}
+\headcommand {\beamer@subsectionentry {0}{5}{1}{20}{Explication du probl\IeC {\`e}me}}\headcommand {\beamer@subsectionpages {19}{19}}
+\headcommand {\slideentry {5}{1}{1}{20/20}{Explication du probl\IeC {\`e}me}{0}}
+\headcommand {\beamer@framepages {20}{20}}
+\headcommand {\beamer@subsectionentry {0}{5}{2}{21}{Mod\IeC {\`e}les de r\IeC {\'e}solution}}\headcommand {\beamer@subsectionpages {20}{20}}
+\headcommand {\slideentry {5}{2}{1}{21/21}{Mod\IeC {\`e}les de r\IeC {\'e}solution}{0}}
+\headcommand {\beamer@framepages {21}{21}}
+\headcommand {\beamer@subsectionentry {0}{5}{3}{22}{R\IeC {\'e}sultats}}\headcommand {\beamer@subsectionpages {21}{21}}
+\headcommand {\slideentry {5}{3}{1}{22/22}{R\IeC {\'e}sultats}{0}}
+\headcommand {\beamer@framepages {22}{22}}
+\headcommand {\slideentry {5}{3}{2}{23/23}{R\IeC {\'e}sultats}{0}}
+\headcommand {\beamer@framepages {23}{23}}
+\headcommand {\slideentry {5}{3}{3}{24/24}{R\IeC {\'e}sultats}{0}}
+\headcommand {\beamer@framepages {24}{24}}
+\headcommand {\slideentry {5}{3}{4}{25/25}{R\IeC {\'e}sultats}{0}}
+\headcommand {\beamer@framepages {25}{25}}
+\headcommand {\sectionentry {6}{Applications : Prix du march\IeC {\'e} - Boursorama}{26}{Applications : Prix du march\IeC {\'e} - Boursorama}{0}}
+\headcommand {\beamer@sectionpages {19}{25}}
+\headcommand {\beamer@subsectionpages {22}{25}}
+\headcommand {\slideentry {6}{0}{1}{26/26}{}{0}}
+\headcommand {\beamer@framepages {26}{26}}
+\headcommand {\beamer@subsectionentry {0}{6}{1}{27}{Donn\IeC {\'e}es}}\headcommand {\beamer@subsectionpages {26}{26}}
+\headcommand {\beamer@subsectionentry {0}{6}{2}{27}{Anticipation sur le prix d'un actif}}\headcommand {\beamer@subsectionpages {27}{26}}
+\headcommand {\slideentry {6}{2}{1}{27/27}{Anticipation sur le prix d'un actif}{0}}
+\headcommand {\beamer@framepages {27}{27}}
+\headcommand {\slideentry {6}{2}{2}{28/28}{Anticipation sur le prix d'un actif}{0}}
+\headcommand {\beamer@framepages {28}{28}}
+\headcommand {\beamer@partpages {1}{28}}
+\headcommand {\beamer@subsectionpages {27}{28}}
+\headcommand {\beamer@sectionpages {26}{28}}
+\headcommand {\beamer@documentpages {28}}
+\headcommand {\def \inserttotalframenumber {27}}

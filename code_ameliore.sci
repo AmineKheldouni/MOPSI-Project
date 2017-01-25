@@ -24,31 +24,43 @@ function valeur=residus(Beta_c,C,K)
   end
 endfunction
 
-r = 0.033;
 //r = 0;
-T = 1;
-//r = 0.533;
-//T = 0.13;
+//T = 0.1;
+r = 0.033;
+T = 2;
 //S0 = 100;// Valeurs du sous jacent (l'actif) :
 //S0 = 630.15;
-S0 = 605.15;
+S0 = 505.15;
+
 p = 2;// Nombre de modèles mélangés :
 sigma = [0.2, 0.4];// volatilités sur un an dans le modèle de Black Scholes
 proba = ones(1,p)/p;
-Beta_opt = [100, 100, 0.2, 0.4, 1/2, 1/2];
+Beta_opt = [S0, S0, sigma(1), sigma(2), proba(1), proba(2)];
 // Prix d'un call : (alpha_k d'un Call)
-M= 100;
+M= 200;
 C = zeros(1, M+1);
 K = zeros(1, M+1);
 for i=[1:M+1] do
-  K(i)=500+(i-1);
+  K(i)= 500+(i-1);
   C(i)=prix_melange("C",0,T,K(i),r,proba,sigma,S0*ones(1,p));
 end
 
-//plot(K,C);
+P = zeros(1, M+1);
+for i=[1:M+1] do
+  P(i)=prix_melange("P",0,T,K(i),r,proba,sigma,S0*ones(1,p));
+end
+
+clf();
+subplot(211);
+plot(K, C);
+xtitle('Prix Call contre le strike K','K','Prix Call');
+
+subplot(212);
+plot(K, P);
+xtitle('Prix Put contre le strike K','K','Prix Put');
 
 //Beta0 = [100, 100, 0.2, 0.4, 0.5, 0.5];
-Beta0 = [100, 100, 0.15, 0.3, 0.3, 0.7];
+Beta0 = [90, 90, 0.1,  0.5, 0.5, 0.5];
 Beta_c = Beta0(1:prod(size(Beta0))-1);
 
 
@@ -94,9 +106,9 @@ function [f,g,ind]=fct_objective(Beta_c,ind)
   g=grad_residus(Beta,C,K);
 endfunction
 
-Beta_inf = [30; 30; 30; 0.1; 0.1;0.1; 0;0]
-Beta_sup = [200; 200; 200; 5; 5; 5; 1;1]
-//[fopt,xopt] = optim(fct_objective, Beta_c)
+Beta_inf = [90, 90, 0.1, 0.1, 0.5]
+Beta_sup = [110, 110, 0.4, 0.4, 0.5]
+//[fopt,xopt] = optim(fct_objective,"b", Beta_inf, Beta_sup, Beta_c)
 
 //disp(xopt)
 //disp(fopt)

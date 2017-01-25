@@ -2,7 +2,7 @@
 exec('/home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/sousjacent.sci', -1)
 
 
-Call_market = 32.4;
+Call_market = 20;
 
 function [Y]=f(t,T,K,r,sigma,x)
   Y = prix_call(t,T,K,r,sigma,x)-Call_market;
@@ -13,27 +13,30 @@ function [Y]= vega(t,T,r,K,sigma,x)
 endfunction
 
 
-function [Y]=volatilite_implicite(t,T,K,r,sigma,x)
-  Y = zeros(1,M+1);
-  eps = 10^(-5);
-  for k=1:M+1 do
-    x0 = sigma;
-    n = 0;
-    while abs(f(t,T,K(k),r,x0,x))> eps
-      n = n+1;
-      disp(k);
-      disp(x0);
-      x0 = x0 -(f(t,T,K(k),r,x0,x))/vega(t,T,r,K(k),x0,x);
+function [Y]=volimpl(t,T,K,r,sgm,x)
+  a1 = 0.001;
+  a2 = sgm;
+  tmp = (a1+a2)/2;
+  i = 0;
+  while i<300 then
+    if f(t,T,K,r,a1,x)*f(t,T,K,r,tmp,x) > 0 then
+      a1 = tmp;
+    else
+      a2 = tmp;
     end
-    Y(1,k) = x0;
+    tmp = (a1+a2)/2;
+    i = i+1;
   end
+  Y = tmp;
 endfunction
 
+vi =volimpl(0,T,K(100),r,1,10);
+disp(vi);
 
 n = prod(size(K));
 
 
-function [sigmaC,sigmaP]=bsimpvol(option,S,K,r,T,sigma0);
+function [sigmaC]=bsimpvol(option,S,K,r,T,sigma0);
   function [Y]=difference(s);
     d1=-((log(K/S)-(r+1/2*s^2)*T)/(s*sqrt(T)));
     d2=-((log(K/S)-(r-1/2*s^2)*T)/(s*sqrt(T)));
@@ -41,7 +44,6 @@ function [sigmaC,sigmaP]=bsimpvol(option,S,K,r,T,sigma0);
   endfunction
   segno=1;
   [sigmaC,d,inf]=fsolve(sigma0,difference);
-  [sigmaP,d,inf]=fsolve(sigma0,difference);
 endfunction
 
 pas = 100;
@@ -64,9 +66,10 @@ for i=1:pas
   end
 end
 
-cmap=hotcolormap(40);
-f=gcf();//figure courante
-f.color_map=cmap;
+//cmap=hotcolormap(40);
+//f=gcf();//figure courante
+//f.color_map=cmap;
 
 plot3d(tt,m,sg_imp);
+xtitle('Nappe de volatilité implicite','Maturité T', 'Moneyness K/S0','volatilité implicite')
 //plot(m,sg_imp(1,:));

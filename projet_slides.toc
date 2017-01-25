@@ -1,0 +1,15 @@
+\beamer@endinputifotherversion {3.36pt}
+\select@language {french}
+\beamer@sectionintoc {1}{Pr\IeC {\'e}sentation du probl\IeC {\`e}me}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{D\IeC {\'e}finition des param\IeC {\`e}tres}{4}{0}{1}
+\beamer@subsectionintoc {1}{2}{Description du mod\IeC {\`e}le}{5}{0}{1}
+\beamer@sectionintoc {2}{Mod\IeC {\'e}lisation math\IeC {\'e}matique du march\IeC {\'e}}{7}{0}{2}
+\beamer@sectionintoc {3}{Optimisation des param\IeC {\`e}tres du march\IeC {\'e}}{13}{0}{3}
+\beamer@sectionintoc {4}{Probl\IeC {\`e}mes de calibration}{17}{0}{4}
+\beamer@sectionintoc {5}{Formule de Black-Scholes invers\IeC {\'e}e}{19}{0}{5}
+\beamer@subsectionintoc {5}{1}{Explication du probl\IeC {\`e}me}{20}{0}{5}
+\beamer@subsectionintoc {5}{2}{Mod\IeC {\`e}les de r\IeC {\'e}solution}{21}{0}{5}
+\beamer@subsectionintoc {5}{3}{R\IeC {\'e}sultats}{22}{0}{5}
+\beamer@sectionintoc {6}{Applications : Prix du march\IeC {\'e} - Boursorama}{26}{0}{6}
+\beamer@subsectionintoc {6}{1}{Donn\IeC {\'e}es}{27}{0}{6}
+\beamer@subsectionintoc {6}{2}{Anticipation sur le prix d'un actif}{27}{0}{6}
