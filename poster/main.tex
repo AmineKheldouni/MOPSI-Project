@@ -97,7 +97,11 @@ Bernard \bsc{Lapeyre}, Professeur à l'Ecole des Ponts ParisTech et Chercheur au
 %----------------------------------------------------------------------------------------
 
 \begin{alertblock}{Objectifs}
-
+\begin{itemize}
+  \item Comprendre comment évaluer le prix d'un sous-jacent avec une modélisation mathématique du marché.
+  \item Confronter le modèle à ses limites en terme de calibration financière.
+  \item Appliquer des notions stochastiques à la finance et connaître l'utilité de tels modèles.
+\end{itemize}
 
 \end{alertblock}
 
@@ -105,21 +109,25 @@ Bernard \bsc{Lapeyre}, Professeur à l'Ecole des Ponts ParisTech et Chercheur au
 %----------------------------------------------------------------------------------------
 %	INTRODUCTION
 %----------------------------------------------------------------------------------------
-
-\begin{block}{Présentation du problème}
-  On veut connaître le prix d'une action sur le marché. Une \textit{action} est un titre de propriété délivré par une société de capitaux. \newline
-  \textbf{Paramètres :}
+\vspace{2cm}
+\begin{block}{Notions financières}
   \begin{itemize}
-    \item $T$ : La maturité désigne le temps qui sépare la date à laquelle une obligation est émise, et la date à laquelle la valeur nominale de cette obligation est remboursée.
-    \item une option :  Produit dérivé qui établit un contrat entre un acheteur et un vendeur.
-    \item $S_t$ : Un actif sous-jacent est un actif sur lequel porte une option ou plus largement un produit dérivé.
-    \item $r$ : Le taux d'intérêt fixe la rémunération du capital prêté versé par l'emprunteur au prêteur.
-    \item $\sigma$ : La volatilité est l'ampleur des variations du cours d'un actif financier. Elle sert de paramètre de quantification du risque de rendement et de prix d'un actif financier. \newline Lorsque la volatilité est élevée, la possibilité de gain est plus importante, mais le risque de perte l'est aussi.
+    \item une option est un produit dérivé qui établit un contrat entre un acheteur et un vendeur.
+    \item $T$ est la maturité ou l'échéance. C'est la date à laquelle une opération doit être réalisée.
+    \item $S_t$ : L'actif sous-jacent à l'instant t est l'actif sur lequel porte une option.
+    \item $r$ : Le taux d'intérêt.
+    \item $\sigma$ : La volatilité, elle indique l'ampleur des variations du cours d'un actif financier.
     \item $K$ : Le strike désigne le prix d'exercice d'une option, qui correspond au prix fixé dans le contrat pour l’acquisition ou la cession du sous-jacent.
-    \item Call : Le call ou l'option d'achat est une option d'achat sur un instrument financier.
-    \item Put : A l'opposé du Call, le Put est l'option de vente de cet instrument.
+    \item \textit{Call} : L'option d'achat d'un instrument financier.
+    \item \textit{Put} : L'option de vente de cet instrument.
   \end{itemize}
-  Etant donné les paramètres $\sigma$, $T$, $K$, $S_0$ et $r$ on voudrait calculer le prix d'un call ou d'un put sur le marché, pour un actif financier.
+  \vspace{2cm}
+  \begin{alertblock}{Mise en situation}
+    Etant donné les paramètres $\sigma$, $T$, $K$, $S_0$ et $r$ on voudrait calculer le prix d'un call ou d'un put sur le marché, pour un actif financier.
+    \newline
+    Pour cela, on admet le modèle de \bsc{Black-Scholes}, qui donne sous certaines hypothèses le pix d'un \textit{Call} ou d'un \textit{Put}. Ce modèle est démontré dans le livre de Philippe  \bsc{BRIAND} sur le modèle de \bsc{Black-Scholes}.
+    \newline
+  \end{alertblock}
 \end{block}
 
 %----------------------------------------------------------------------------------------
@@ -133,7 +141,7 @@ Bernard \bsc{Lapeyre}, Professeur à l'Ecole des Ponts ParisTech et Chercheur au
 
 \begin{column}{\twocolwid} % Begin a column which is two columns wide (column 2)
 
-\begin{block}{Modélisation mathématique du marché et problèmes de calibration}
+\begin{block}{Modèles de \bsc{Black-Scholes} et problèmes de calibration}
 
 \begin{columns}[t,totalwidth=\twocolwid] % Split up the two columns wide column
 
@@ -143,25 +151,19 @@ Bernard \bsc{Lapeyre}, Professeur à l'Ecole des Ponts ParisTech et Chercheur au
 %	MATERIALS
 
 \begin{alertblock}{Modèle de \bsc{Black-Scholes}}
-  Dans ce modèle, on considére le prix de l'action comme un processus stochastique en temps continu $S_t$. \newline
-  \textbf{Hypothèses :}
-  \begin{itemize}
-    \item  Marchés efficients :
-    \begin{itemize}
-      \item Pas de coûts de transaction
-      \item Pas de restrictions sur le volume de transactions
-      \item Pas d'opportunité d'arbitrage
-    \end{itemize}
-    \item Les rendements du sous-jacent sont gaussiens, stationnaires et indépendants.
-    \item Le placement à la banque est sans risque et le taux d'intérêt r est constant.
-  \end{itemize}
-  \textbf{Equation différentielle stochastique}
-  \[ {\color{red} dS_t = \mu S_t dt + \sigma S_t dW_t} \]
-On note \begin{itemize}
-      \item $S_0$ - La valeur actuelle de l'action sous-jacente.
-      \item $T$ - Le temps qu'il reste à l'option avant son échéance (la maturité).
-      \item $K$ - Le prix d'exercice fixé par l'option.
-      \item $W_t$ - Mouvement Brownien de variance $t$
+  Dans ce modèle, on considére le prix de l'action comme un processus stochastique en temps continu $S_t$ et suit certaines hypothèses. \newline
+  {\center{\textbf{Equation différentielle stochastique}}
+  \[ {\color{red} dS_t = \mu S_t dt + \sigma S_t dW_t} \]}
+avec $W_t$ Un mouvement Brownien standard.
+\newline
+Le prix d'un \textit{Call} est caractérisé par son \textit{payoff} $(S_T - K)_{+}$. \newline
+Le modèle fournit la formule de \bsc{Back-Scholes} d'un \textit{Call} (resp. d'un \textit{Put}) :
+$$ C(S_0,K,r,t,\sigma) = S_0 \phi(d_1)-K \times e^{-rt} \phi(d_2) $$
+$$ P(S_0,K,r,t,\sigma) = -S_0 \phi(-d_1)+K \times e^{-rt} \phi(-d_2) $$
+Avec : \begin{itemize}
+\item $\phi$ la fonction de répartition de la loi normale centrée réduite.
+\item $d_1 = \frac{1}{\sigma \sqrt{t}} (ln(\frac{S_0}{K})+(r+\frac{1}{2}\sigma^2)t) $
+\item $d_2 = d_1 - \sigma \sqrt{t}$
 \end{itemize}
 \end{alertblock}
 
@@ -175,22 +177,25 @@ On note \begin{itemize}
 %	METHODS
 %----------------------------------------------------------------------------------------
 
-Le prix théorique d'un call donnant le droit mais pas l'obligation d'acheter l'actif $S$ à la valeur $K$ à la date $T$, est caractérisé par son \textit{payoff}:
-$$ (S_T - K)^{+} = \max (S_T -K,0) $$
-La formule de Black-Scholes donne le prix d'un Call :
-$$ C(S_0,K,r,t,\sigma) = S_0 \phi(d_1)-K \times e^{-rt} \phi(d_2) $$
-Avec : \begin{itemize}
-\item $\phi$ la fonction de répartition de la loi normale centrée réduite.
-\item $d_1 = \frac{1}{\sigma \sqrt{t}} (ln(\frac{S_0}{K})+(r+\frac{1}{2}\sigma^2)t) $
-\item $d_2 = d_1 - \sigma \sqrt{t}$
-\end{itemize}
-Et pour un put, on a un prix théorique par rapport à un \textit{payoff} de $ (S_T - K)^{+}$
-\\ \vspace{0.5cm}
-Et on a une formule de Black-Scholes pour le prix d'un put :
-$$ P(S_0,K,r,t,\sigma) = -S_0 \phi(-d_1)+K \times e^{-rt} \phi(-d_2) $$
-%----------------------------------------------------------------------------------------
-
+  On fixe un nombre $P$ de modèles de Black-Scholes dont on va effectuer un mélange selon une certaine distribution de probabilités $(p_1,p_2,...,p_p)$.
+  \newline
+  Ainsi on considère le \texit{Call}, à $K$, $r$ et $t$ fixés, de notre mélange comme suit :
+  $$ C_m(\lambda, \sigma, p) = \sum^p_{i=1} p_i C(\lambda_i,K,r,t,\sigma_i) $$
+\vspace{-0.3cm}
+$\lambda = (S_{0,1},...,S_{0,P}),\ \  \sigma = (\sigma_1,...,\sigma_P), \ \ p = (p_1,...,p_P)$
+\vspace{0.3cm}
+\begin{alertblock}{Calibration en finance}
+  $ \beta_* = (\lambda,\sigma,p)$ sont nos données de départ pour $K$ fixé.
+  \newline
+  On retrouve la valeur $\beta_*$ par une méthode des moindres carrés sur plusieurs prix d'exercice $(K_1,...,K_M)$, minimisant les résidus des prix. \newline
+  Pour un call :
+  $$ \min \sum^M_{j=1} (C_{m,j}(\beta)-\alpha_j)^2 $$
+  \vspace{-0.4cm}
+  $$ s.c. \sum^p_{i=1}p_i = 1 $$
+$\alpha_j$ étant le prix du Call calculé pour $\Beta_0$ pour un \textit{Strike} $K_j$.
+\end{alertblock}
 \end{column} % End of column 2.2
+%----------------------------------------------------------------------------------------
 
 \end{columns} % End of the split of column 2 - any content after this will now take up 2 columns width
 
@@ -198,8 +203,8 @@ $$ P(S_0,K,r,t,\sigma) = -S_0 \phi(-d_1)+K \times e^{-rt} \phi(-d_2) $$
 
 
 %----------------------------------------------------------------------------------------
-\vspace{-2cm}
-\begin{alertblock}{Algorithmes}
+\vspace{0cm}
+\begin{block}{Résultats}
 
 \setbeamercolor{block title}{fg=ngreen,bg=dblue!10} % Colors of the block titles
 \setbeamercolor{block body}{fg=black,bg=dblue!10} % Colors of the body of blocks
@@ -211,17 +216,28 @@ $$ P(S_0,K,r,t,\sigma) = -S_0 \phi(-d_1)+K \times e^{-rt} \phi(-d_2) $$
 %----------------------------------------------------------------------------------------
 %	MATHEMATICAL SECTION
 %----------------------------------------------------------------------------------------
-\begin{block}{Mélange de modèles BS}
-  On fixe un nombre $P$ de modèles de Black-Scholes dont on va effectuer un mélange selon une certaine distribution de probabilités $(p_1,p_2,...,p_p)$.
-  \newline
-  Ainsi on considère le Call (et on fait de même pour le prix d'un Put), à $K$, $r$ et $t$ fixés, de notre mélange comme suit :
-  $$ C_m(\lambda, \sigma, p) = \sum^p_{i=1} p_i C(\lambda_i,K,r,t,\sigma_i) $$
-\begin{itemize}
-  \item $\lambda$ : la liste de taille $P$ des sous-jacents de chacun des modèles considérés.
-  \item $\sigma$ : la liste des volatilités
-  \item $p$ : la liste des probabilités de tirer chacun des modèles.
-\end{itemize}
-\end{block}
+
+\begin{minipage}{0.49\textwidth}
+  On prend $P = 2$
+  \begin{itemize}
+    \item $\lambda = (100,100)$
+    \item $\sigma = (0.2, 0.4)$
+    \item $p = (0.5,0.5) $
+    \item $r = 0$
+    \item $K = (50,...150)$
+  \end{itemize}
+\end{minipage}
+
+\begin{minipage}{1.49\textwidth}
+\begin{figure}[!r]
+  \vspace{-11cm}
+  \hspace{-4cm}
+  \includegraphics[scale=0.85]{callput.png}
+\end{figure}
+\end{minipage}
+
+On trouve par la fonction d'optimisation non linéaire de SCILAB, \textit{optim}, un $\beta$ proche de l'optimum :
+$$ \beta_* = (100.001,100.001,0.22,0.38,0.5,0.5) $$
 
 %----------------------------------------------------------------------------------------
 
@@ -233,23 +249,21 @@ $$ P(S_0,K,r,t,\sigma) = -S_0 \phi(-d_1)+K \times e^{-rt} \phi(-d_2) $$
 %	RESULTS
 %----------------------------------------------------------------------------------------
 
-\begin{block}{OPTIM}
-    En considérant un vecteur $ \beta_0 = (\lambda,\sigma,p)$ fixé, on obtient par la formule de Black-Scholes les prix d'un Call et d'un Put d'une option qu'on prend européenne par exemple.
-    \newline
-    En oubliant la valeur $\beta_0$, on peut la retrouver en effectuant une méthode des moindres carrés sur plusieurs prix d'exercice $(K_1,...,K_M)$, minimisant les résidus des prix. Pour un call :
-    $$ \min \sum^M_{j=1} (C_{m,j}(\beta)-\alpha_j)^2 $$
-    \vspace{-0.3cm}
-    $$ s.c. \sum^p_{i=1}p_i = 1 $$
-  $\alpha_j$ étant le prix du Call calculé pour $\Beta_0$ pour un \textit{Strike} $K_j$.
-\end{block}
 
+  \textbf{Les problèmes de calibration :}
+  \begin{itemize}
+    \item L'ensemble des solutions réalisables est trop grand.
+    \item Choix d'un bon intervalle d'exercice $K$.
+    \item En dimension plus grande, les erreurs de calibration sont encore plus importants.
+  \end{itemize}
+    \center{\color{red}{\textbf{Les problèmes de calibrations font que l'optimisation n'est plus possible en grande dimension P}}}
 %----------------------------------------------------------------------------------------
 
 \end{column} % End of column 2.2
 
 \end{columns} % End of the split of column 2
 
-\end{alertblock}
+\end{block}
 
 \end{column} % End of the second column
 
@@ -264,67 +278,40 @@ $$ P(S_0,K,r,t,\sigma) = -S_0 \phi(-d_1)+K \times e^{-rt} \phi(-d_2) $$
 %	CONCLUSION
 %----------------------------------------------------------------------------------------
 
-\begin{block}{Conclusion : application à la pharmaceutique}
+\begin{block}{Volatilité implicite}
+On souhaite parfois retrouver la volatilité à travers le modèle de \bsc{Black-Scholes} pour anticiper sur le prix d'un actif. \newline
+Comme démontré dans le livre de Peter \bsc{TANKOV}, l'inversion de la formule de \bsc{Black-Scholes} est possible :
+  $$ \exists ! \sigma_* / \ \ \ C_{BS}(S_0,K,r,t,\sigma_*) = C_{marché} $$
+  On appelle cette volatilité, la \textbf{volatilité implicite}.
+\newline
+  En utilisant un algorithme de dichotomie ou une méthode de Newton sur \bsc{SCILAB}, on obtient un graphe tridimensionnel appelé \textbf{la surface de la volatilité}.
+    \begin{figure}
+      \includegraphics[scale=0.60]{volimpl1.png}
+      \label{Exemple de surface de volatilité}
+    \end{figure}
+\end{block}
+
+\begin{block}{Application à un actif :}
   \begin{minipage}{0.49\textwidth}
-    On prend $P = 2$
-    \begin{itemize}
-      \item $\lambda = (100,100)$
-      \item $\sigma = (0.2, 0.4)$
-      \item $p = (0.5,0.5) $
-      \item $r = 0$
-      \item $K = (50,...150)$
-    \end{itemize}
+    On prend $M = 200$ et :
+      \[
+        \begin{array}{|c|c|}
+          \hline
+          S_0 & \$ 505.15  \\ \hline
+          \sigma_0 & 20\% \\ \hline
+          r & 3.3 \% \\ \hline
+          K & (\$500,...,\$700) \\ \hline
+          T & 2 ans \\ \hline
+        \end{array}
+      \]
   \end{minipage}
 
   \begin{minipage}{1.49\textwidth}
-  \begin{figure}[!r]
-    \vspace{-11cm}
-    \includegraphics[scale=0.9]{callput.png}
-  \end{figure}
+    \begin{figure}
+      \vspace{-8.5cm}
+      \includegraphics[scale=0.55]{volimpl2.png}
+    \end{figure}
   \end{minipage}
-
-  On trouve par la fonction d'optimisation non linéaire de SCILAB, \textit{optim}, un $\beta$ proche de l'optimum :
-  $$ \beta_* = (100.001,100.001,0.22,0.38,0.5,0.5) $$
-  Toutefois, les erreurs de calibrations étant non négligeables, il a fallu réajuster l'ensemble de recherche des solutions réalisables.
-  En effet, même pour $p=2$, il a fallu ajuster un bon intervalle pour le strike $K$, pour que l'optimisation des moindres carrés donne un résultat cohérents avec le $\beta_0$ qu'on a "oublié" pour retrouver par cette méthode.
-  \newline
-  En augmentant la dimension de l'espace dans lequel vit $\beta$, de dimension $3P$, l'optimisation ne marche plus.
-  $$ \Rightarrow \text{C'est un problème de calibration en finance} $$
-  Cette fois-ci, connaissant tous les paramètres sauf la volatilité $\sigma$, on va essayer de la retrouver pour un certain sous-jacent du marché. \newline
-  Sur le marché, on connait le dernier prix d'un Call/Put émis pour un actif financier et par la formule de Black-Scholes, on inverse l'équation.
-  \newline Donc :
-  $$ \exists ! \sigma_* s.t. \ \ \ C_{BS}(S_0,K,r,t,\sigma_*) = C_{market} $$
-  On appelle cette volatilité, la \textbf{volatilité implicite}.
-  Il existe divers méthodes de résolution de l'inversion de la formule de Black-Scholes :
-  \begin{itemize}
-    \item Méthode de Newton-Raphson de convergence quadratique
-    \item La dichotomie de convergence en $\mathcal{O}(log(M))$
-  \end{itemize}
-  En utilisant la fonction \textit{fsolve} de SCILAB, on obtient un graphe 3D appelé \textbf{la surface de la volatilité} pour les valeurs précédentes avec $M=200$ le nombre de prix d'exercices pris en compte.
-    \begin{figure}
-      \includegraphics[scale=0.20]{volimpl1.png}
-    \end{figure}
-
-\begin{figure}
-  \includegraphics[scale=0.20]{volimpl1.png}
-\end{figure}
-
-  On prend $M = 200$ et :
-
-    \[
-      \begin{array}{|c|c|}
-        \hline
-        S_0 & 505.15 \\ \hline
-        \sigma_0 & 20\% \\ \hline
-        r & 3.3 \% \\ \hline
-        K & (500,...,700) \\ \hline
-        T & 2 \\ \hline
-      \end{array}
-    \]
-    \begin{figure}
-      \vspace{-0.8cm}
-      \includegraphics[scale=0.35]{volimpl2.png}
-    \end{figure}
 \end{block}
 
 %----------------------------------------------------------------------------------------
@@ -337,16 +324,25 @@ $$ P(S_0,K,r,t,\sigma) = -S_0 \phi(-d_1)+K \times e^{-rt} \phi(-d_2) $$
 
 \begin{block}{Références}
 
-\nocite{*} % Insert publications even if they are not cited in the poster
-\small{\bibliographystyle{unsrt}
-\bibliography{sample}\vspace{0.75in}}
-\vspace{-2.5cm}
+  \begin{minipage}{0.6\textwidth}
+    \begin{itemize}
+      \small
+        \item Philippe \bsc{BRIAND},  \textit{Le modèle de Black-Scholes}, 2003.
+        \item Peter \bsc{TANKOV}, \textit{Surface de volatilité}, 2015.
+        \item Damiano \bsc{BRIGO}, Fabio \bsc{MERCURIO}, \textit{Lognormal-mixture dynamics and calibration to market volatility smiles}.
+    \end{itemize}
+    \end{minipage}
+
+    \begin{minipage}{1.49\textwidth}
+
+  \begin{center}
+
+      \vspace{-6cm}
+      \hspace{3cm}
+      \includegraphics[scale=0.2]{logos.png}
+  \end{center}
+    \end{minipage}
 \end{block}
-\begin{center}
-  \includegraphics[scale=0.33]{logos.png}
-\end{center}
-
-
 %\begin{frame}{Bibliographie}
 %\begin{itemize}
 

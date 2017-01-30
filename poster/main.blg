@@ -3,44 +3,58 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: main.aux
 The style file: unsrt.bst
 Database file #1: sample.bib
-You've used 1 entry,
+I was expecting a `,' or a `}'---line 8 of file sample.bib
+ :  title 
+ :        = {Surface de volatilité},
+I'm skipping whatever remains of this entry
+Repeated entry---line 14 of file sample.bib
+ :  title
+ :        = {Lognormal-mixture dynamics and calibration to market volatility smiles},
+I'm skipping whatever remains of this entry
+Warning--empty journal in poly
+Warning--empty author in title
+Warning--empty title in title
+Warning--empty journal in title
+Warning--empty year in title
+You've used 2 entries,
             1791 wiz_defined-function locations,
-            450 strings with 3601 characters,
-and the built_in function-call counts, 166 in all, are:
-= -- 12
-> -- 4
+            449 strings with 3568 characters,
+and the built_in function-call counts, 248 in all, are:
+= -- 13
+> -- 5
 < -- 0
-+ -- 2
++ -- 3
 - -- 1
-* -- 5
-:= -- 32
-add.period$ -- 3
-call.type$ -- 1
-change.case$ -- 0
+* -- 17
+:= -- 39
+add.period$ -- 4
+call.type$ -- 2
+change.case$ -- 1
 chr.to.int$ -- 0
-cite$ -- 1
-duplicate$ -- 10
-empty$ -- 20
+cite$ -- 7
+duplicate$ -- 16
+empty$ -- 29
 format.name$ -- 1
-if$ -- 36
+if$ -- 47
 int.to.chr$ -- 0
-int.to.str$ -- 1
+int.to.str$ -- 2
 missing$ -- 2
-newline$ -- 8
+newline$ -- 11
 num.names$ -- 1
-pop$ -- 7
+pop$ -- 13
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 2
+skip$ -- 9
 stack$ -- 0
 substring$ -- 0
-swap$ -- 1
+swap$ -- 0
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 0
+warning$ -- 5
 while$ -- 1
-width$ -- 2
-write$ -- 12
+width$ -- 3
+write$ -- 15
+(There were 2 error messages)
