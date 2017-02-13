@@ -24,7 +24,7 @@
 
 \documentclass[final]{beamer}
 
-\usepackage[scale=1.24]{beamerposter} % Use the beamerposter package for laying out the poster
+\usepackage[scale=1.1]{beamerposter} % Use the beamerposter package for laying out the poster
 \usepackage[francais]{babel}
 \usepackage[utf8]{inputenc}
 
@@ -65,10 +65,10 @@
 %	TITLE SECTION
 %----------------------------------------------------------------------------------------
 
-\title{Calibration en finance : Mélanges de modèles de \bsc{Black-Scholes}} % Poster title
+\title{Calibration en finance : Mélange de modèles de \bsc{Black-Scholes}} % Poster title
 
 \author{\bsc{Kheldouni} Mohammed-Amine
-\\\vspace{1cm} \textbf{ENPC}
+\\\vspace{1cm} Octobre 2016 - février 2017 \hspace{3cm} \textbf{ENPC}
 \\\vspace{1cm} \textbf{Encadr\'e par :}
 Bernard \bsc{Lapeyre}, Professeur à l'Ecole des Ponts ParisTech et Chercheur au CERMICS} % Author(s)
 
@@ -118,8 +118,8 @@ Bernard \bsc{Lapeyre}, Professeur à l'Ecole des Ponts ParisTech et Chercheur au
     \item $r$ : Le taux d'intérêt.
     \item $\sigma$ : La volatilité, elle indique l'ampleur des variations du cours d'un actif financier.
     \item $K$ : Le strike désigne le prix d'exercice d'une option, qui correspond au prix fixé dans le contrat pour l’acquisition ou la cession du sous-jacent.
-    \item \textit{Call} : L'option d'achat d'un instrument financier.
-    \item \textit{Put} : L'option de vente de cet instrument.
+    \item \textit{Call} : Option d'achat d'un instrument financier.
+    \item \textit{Put} : Option de vente de cet instrument.
   \end{itemize}
   \vspace{2cm}
   \begin{alertblock}{Mise en situation}
@@ -140,7 +140,7 @@ Bernard \bsc{Lapeyre}, Professeur à l'Ecole des Ponts ParisTech et Chercheur au
 \begin{column}{\sepwid}\end{column} % Empty spacer column
 
 \begin{column}{\twocolwid} % Begin a column which is two columns wide (column 2)
-
+\vspace{-1cm}
 \begin{block}{Modèles de \bsc{Black-Scholes} et problèmes de calibration}
 
 \begin{columns}[t,totalwidth=\twocolwid] % Split up the two columns wide column
@@ -151,13 +151,13 @@ Bernard \bsc{Lapeyre}, Professeur à l'Ecole des Ponts ParisTech et Chercheur au
 %	MATERIALS
 
 \begin{alertblock}{Modèle de \bsc{Black-Scholes}}
-  Dans ce modèle, on considére le prix de l'action comme un processus stochastique en temps continu $S_t$ et suit certaines hypothèses. \newline
+  Dans ce modèle, on considère le prix de l'action comme un processus stochastique en temps continu $S_t$ et suit certaines hypothèses. \newline
   {\center{\textbf{Equation différentielle stochastique}}
   \[ {\color{red} dS_t = \mu S_t dt + \sigma S_t dW_t} \]}
 avec $W_t$ Un mouvement Brownien standard.
 \newline
 Le prix d'un \textit{Call} est caractérisé par son \textit{payoff} $(S_T - K)_{+}$. \newline
-Le modèle fournit la formule de \bsc{Back-Scholes} d'un \textit{Call} (resp. d'un \textit{Put}) :
+Le modèle fournit la formule de \bsc{Black-Scholes} d'un \textit{Call} (resp. d'un \textit{Put}) :
 $$ C(S_0,K,r,t,\sigma) = S_0 \phi(d_1)-K \times e^{-rt} \phi(d_2) $$
 $$ P(S_0,K,r,t,\sigma) = -S_0 \phi(-d_1)+K \times e^{-rt} \phi(-d_2) $$
 Avec : \begin{itemize}
@@ -166,7 +166,12 @@ Avec : \begin{itemize}
 \item $d_2 = d_1 - \sigma \sqrt{t}$
 \end{itemize}
 \end{alertblock}
-
+On fixe un nombre $P$ de modèles de Black-Scholes dont on va effectuer un mélange selon une certaine distribution de probabilités $(p_1,p_2,...,p_p)$.
+\newline
+Ainsi on considère le \texit{Call}, à $K$, $r$ et $t$ fixés, de notre mélange comme suit :
+$$ C_m(\lambda, \sigma, p) = \sum^p_{i=1} p_i C(\lambda_i,K,r,t,\sigma_i) $$
+\vspace{-0.3cm}
+$\lambda = (S_{0,1},...,S_{0,P}),\ \  \sigma = (\sigma_1,...,\sigma_P), \ \ p = (p_1,...,p_P)$
 %----------------------------------------------------------------------------------------
 
 \end{column} % End of column 2.1
@@ -176,23 +181,23 @@ Avec : \begin{itemize}
 %----------------------------------------------------------------------------------------
 %	METHODS
 %----------------------------------------------------------------------------------------
+\begin{figure}[!H]
+  \centerline{\includegraphics[scale=0.65]{bs_actif_mopsi.png}}
 
-  On fixe un nombre $P$ de modèles de Black-Scholes dont on va effectuer un mélange selon une certaine distribution de probabilités $(p_1,p_2,...,p_p)$.
-  \newline
-  Ainsi on considère le \texit{Call}, à $K$, $r$ et $t$ fixés, de notre mélange comme suit :
-  $$ C_m(\lambda, \sigma, p) = \sum^p_{i=1} p_i C(\lambda_i,K,r,t,\sigma_i) $$
-\vspace{-0.3cm}
-$\lambda = (S_{0,1},...,S_{0,P}),\ \  \sigma = (\sigma_1,...,\sigma_P), \ \ p = (p_1,...,p_P)$
+\end{figure}
+
 \vspace{0.3cm}
 \begin{alertblock}{Calibration en finance}
   $ \beta_* = (\lambda,\sigma,p)$ sont nos données de départ pour $K$ fixé.
   \newline
   On retrouve la valeur $\beta_*$ par une méthode des moindres carrés sur plusieurs prix d'exercice $(K_1,...,K_M)$, minimisant les résidus des prix. \newline
   Pour un call :
-  $$ \min \sum^M_{j=1} (C_{m,j}(\beta)-\alpha_j)^2 $$
+  \[{\color{red} \min \sum^M_{j=1} (C_{m,j}(\beta)-\alpha_j)^2} \]
   \vspace{-0.4cm}
-  $$ s.c. \sum^p_{i=1}p_i = 1 $$
-$\alpha_j$ étant le prix du Call calculé pour $\Beta_0$ pour un \textit{Strike} $K_j$.
+  \[ s.c. {\color{red} \sum^p_{i=1}p_i = 1} \]
+$\alpha_j$ étant le prix du Call calculé avec les valeurs de $\beta_*$ pour un \textit{Strike} $K_j$.
+\newline
+Il est important de comprendre que cette méthode d'optimisation prouve une certaine bijection entre les valeurs financières $\lambda$, $\sigma$ et la distribution $p$ du mélange et le prix d'une option (d'achat ou de vente) sur le marché.
 \end{alertblock}
 \end{column} % End of column 2.2
 %----------------------------------------------------------------------------------------
@@ -218,6 +223,7 @@ $\alpha_j$ étant le prix du Call calculé pour $\Beta_0$ pour un \textit{Strike
 %----------------------------------------------------------------------------------------
 
 \begin{minipage}{0.49\textwidth}
+  \vspace{2cm}
   On prend $P = 2$
   \begin{itemize}
     \item $\lambda = (100,100)$
@@ -230,15 +236,15 @@ $\alpha_j$ étant le prix du Call calculé pour $\Beta_0$ pour un \textit{Strike
 
 \begin{minipage}{1.49\textwidth}
 \begin{figure}[!r]
-  \vspace{-11cm}
+  \vspace{-10cm}
   \hspace{-4cm}
-  \includegraphics[scale=0.85]{callput.png}
+  \includegraphics[scale=0.8]{callput.png}
 \end{figure}
 \end{minipage}
-
-On trouve par la fonction d'optimisation non linéaire de SCILAB, \textit{optim}, un $\beta$ proche de l'optimum :
-$$ \beta_* = (100.001,100.001,0.22,0.38,0.5,0.5) $$
-
+\newline
+\newline
+\\
+  On trouve par la fonction d'optimisation non linéaire de SCILAB, \textit{optim}, un $\beta$ proche de l'optimum avec une erreur assez faible :
 %----------------------------------------------------------------------------------------
 
 \end{column} % End of column 2.1
@@ -250,13 +256,15 @@ $$ \beta_* = (100.001,100.001,0.22,0.38,0.5,0.5) $$
 %----------------------------------------------------------------------------------------
 
 
+  $$ \beta_{approx} = (100.001,100.001,0.22,0.36,0.5,0.5) $$
+  $$ \Rightarrow \ \ \ \ \epsilon = \frac{\|\beta_{approx}-\beta_* \|}{\|\beta_* \|} \approx 3.16 \times 10^{-4}$$
   \textbf{Les problèmes de calibration :}
   \begin{itemize}
     \item L'ensemble des solutions réalisables est trop grand.
     \item Choix d'un bon intervalle d'exercice $K$.
-    \item En dimension plus grande, les erreurs de calibration sont encore plus importants.
+    \item En dimension plus grande, les erreurs de calibration sont encore plus importantes.
   \end{itemize}
-    \center{\color{red}{\textbf{Les problèmes de calibrations font que l'optimisation n'est plus possible en grande dimension P}}}
+    \center{\color{red}{\textbf{Les algorithmes d'optimisation rendent la procédure de calibration numériquement délicate en grande dimension P}}}
 %----------------------------------------------------------------------------------------
 
 \end{column} % End of column 2.2
@@ -286,7 +294,7 @@ Comme démontré dans le livre de Peter \bsc{TANKOV}, l'inversion de la formule 
 \newline
   En utilisant un algorithme de dichotomie ou une méthode de Newton sur \bsc{SCILAB}, on obtient un graphe tridimensionnel appelé \textbf{la surface de la volatilité}.
     \begin{figure}
-      \includegraphics[scale=0.60]{volimpl1.png}
+      \includegraphics[scale=0.80]{volimpl1.png}
       \label{Exemple de surface de volatilité}
     \end{figure}
 \end{block}
@@ -301,7 +309,7 @@ Comme démontré dans le livre de Peter \bsc{TANKOV}, l'inversion de la formule 
           \sigma_0 & 20\% \\ \hline
           r & 3.3 \% \\ \hline
           K & (\$500,...,\$700) \\ \hline
-          T & 2 ans \\ \hline
+          T & 2 \;mois \\ \hline
         \end{array}
       \]
   \end{minipage}
@@ -330,6 +338,7 @@ Comme démontré dans le livre de Peter \bsc{TANKOV}, l'inversion de la formule 
         \item Philippe \bsc{BRIAND},  \textit{Le modèle de Black-Scholes}, 2003.
         \item Peter \bsc{TANKOV}, \textit{Surface de volatilité}, 2015.
         \item Damiano \bsc{BRIGO}, Fabio \bsc{MERCURIO}, \textit{Lognormal-mixture dynamics and calibration to market volatility smiles}.
+        \item Pr. Benoite \bsc{DE-SAPORTA}, \textit{TP sur les mouvements Brownien et Modèle de \bsc{Black-Scholes} (finance en temps continu)}
     \end{itemize}
     \end{minipage}
 

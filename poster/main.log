@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.10)  30 JAN 2017 20:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.10)  13 FEB 2017 11:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -580,7 +580,7 @@ beamerposter: checking size input, please wait.
 beamerposter: the input a0\ 1\ was correct, we proceed.
 beamerposter: finished size input check.
 beamerposter: myfontscale=1.0
-beamerposter: myfontscale=1.24
+beamerposter: myfontscale=1.1
 (/usr/share/texlive/texmf-dist/tex/latex/fp/fp.sty
 Package: fp 1995/04/02
  `Fixed Point Package', Version 0.8, April 2, 1995 (C) Michael Mehlich (/usr/share/texlive/texmf-dist/tex/latex/fp/defpattern.sty
@@ -1451,7 +1451,7 @@ Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-LaTeX Font Info:    Calculating math sizes for size <17.86> on input line 79.
+LaTeX Font Info:    Calculating math sizes for size <15.84> on input line 79.
 LaTeX Font Info:    Try loading font information for OT1+lmr on input line 79.
 (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1465,50 +1465,43 @@ LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 79.
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 
-LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <17.86> not available
-(Font)              size <17.28> substituted on input line 79.
+LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <15.84> not available
+(Font)              size <14.4> substituted on input line 79.
 
-
-LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <12.50194> not available
-(Font)              size <12> substituted on input line 79.
-
-LaTeX Font Info:    Try loading font information for TS1+lmss on input line 363.
+LaTeX Font Info:    External font `cmex7' loaded for size
+(Font)              <7.92> on input line 79.
+LaTeX Font Info:    Try loading font information for TS1+lmss on input line 372.
 (/usr/share/texmf/tex/latex/lm/ts1lmss.fd
 File: ts1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Calculating math sizes for size <37.03> on input line 363.
+LaTeX Font Info:    Calculating math sizes for size <32.85> on input line 372.
 
 
-LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <37.03> not available
-(Font)              size <24.88> substituted on input line 363.
+LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <32.85> not available
+(Font)              size <24.88> substituted on input line 372.
 
 
-LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <25.92088> not available
-(Font)              size <24.88> substituted on input line 363.
+LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <22.9949> not available
+(Font)              size <24.88> substituted on input line 372.
 
 
-LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <18.515> not available
-(Font)              size <17.28> substituted on input line 363.
+LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <16.425> not available
+(Font)              size <17.28> substituted on input line 372.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 363--363
-
- []
-
-
-Underfull \hbox (badness 1990) in paragraph at lines 363--363
-\T1/lmr/m/n/37.03 comme un pro-ces-sus sto-chas-tique en temps
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 363--363
+Underfull \hbox (badness 10000) in paragraph at lines 372--372
 
  []
 
-/home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/poster/main.tex:363: Undefined control sequence.
+
+Underfull \hbox (badness 10000) in paragraph at lines 372--372
+
+ []
+
+/home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/poster/main.tex:372: Undefined control sequence.
 \beamer@doifinframe ...si on considère le \texit 
                                                   {Call}, à $K$, $r$ et $t$...
-l.363 \end{frame}
+l.372 \end{frame}
                   % End of the enclosing frame
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1516,73 +1509,62 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-
-Underfull \hbox (badness 1152) in paragraph at lines 363--363
-\T1/lmr/m/n/37.03 moindres car-r�s sur plu-sieurs prix d'exer-cice
- []
-
-/home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/poster/main.tex:363: Undefined control sequence.
-<recently read> \Beta 
-                      
-l.363 \end{frame}
-                  % End of the enclosing frame
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-<callput.png, id=15, 586.19pt x 455.7025pt>
+<bs_actif_mopsi.png, id=15, 1369.115pt x 738.76pt>
+File: bs_actif_mopsi.png Graphic file (type png)
+ <use bs_actif_mopsi.png>
+Package pdftex.def Info: bs_actif_mopsi.png used on input line 372.
+(pdftex.def)             Requested size: 889.91422pt x 480.1883pt.
+ <callput.png, id=16, 586.19pt x 455.7025pt>
 File: callput.png Graphic file (type png)
  <use callput.png>
-Package pdftex.def Info: callput.png used on input line 363.
-(pdftex.def)             Requested size: 498.26385pt x 387.34894pt.
+Package pdftex.def Info: callput.png used on input line 372.
+(pdftex.def)             Requested size: 468.95264pt x 364.56248pt.
 
-Overfull \hbox (373.96014pt too wide) in paragraph at lines 363--363
+Overfull \hbox (373.96014pt too wide) in paragraph at lines 372--372
 []$[]$  
  []
 
 
-LaTeX Warning: Command \' invalid in math mode on input line 363.
+LaTeX Warning: Command \' invalid in math mode on input line 372.
 
-<volimpl1.png, id=16, 898.35625pt x 606.265pt>
+<volimpl1.png, id=17, 898.35625pt x 606.265pt>
 File: volimpl1.png Graphic file (type png)
  <use volimpl1.png>
-Package pdftex.def Info: volimpl1.png used on input line 363.
-(pdftex.def)             Requested size: 539.0179pt x 363.76181pt.
- <volimpl2.png, id=17, 879.285pt x 498.86375pt>
+Package pdftex.def Info: volimpl1.png used on input line 372.
+(pdftex.def)             Requested size: 718.68597pt x 485.01266pt.
+ <volimpl2.png, id=18, 879.285pt x 498.86375pt>
 File: volimpl2.png Graphic file (type png)
  <use volimpl2.png>
-Package pdftex.def Info: volimpl2.png used on input line 363.
+Package pdftex.def Info: volimpl2.png used on input line 372.
 (pdftex.def)             Requested size: 483.60825pt x 274.37592pt.
 
-Overfull \hbox (373.96014pt too wide) in paragraph at lines 363--363
+Overfull \hbox (373.96014pt too wide) in paragraph at lines 372--372
 []$[]$ 
  []
 
-<logos.png, id=18, 1061.9675pt x 1390.19376pt>
+<logos.png, id=19, 1061.9675pt x 1390.19376pt>
 File: logos.png Graphic file (type png)
  <use logos.png>
-Package pdftex.def Info: logos.png used on input line 363.
+Package pdftex.def Info: logos.png used on input line 372.
 (pdftex.def)             Requested size: 212.38974pt x 278.03383pt.
 
-Overfull \hbox (373.96014pt too wide) in paragraph at lines 363--363
+Overfull \hbox (373.96014pt too wide) in paragraph at lines 372--372
 []$[]$ 
  []
 
 
-Overfull \hbox (20.47064pt too wide) detected at line 363
+Overfull \hbox (18.7236pt too wide) detected at line 372
 [][][] [][][][][][][][][] [][][][][][][][][] [][][][][][][][][] [][][][][][][][][] [][][][][][][]  [][] [][][][][][][] 
  []
 
 
-/home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/poster/main.tex:363: LaTeX Error: There's no line here to end.
+/home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/poster/main.tex:372: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.363 \end{frame}
+l.372 \end{frame}
                   % End of the enclosing frame
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -1595,7 +1577,7 @@ Overfull \hbox (88.20334pt too wide) has occurred while \output is active
 
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
- </home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/poster/callput.png> </home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/poster/volimpl1.png> </home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/poster/volimpl2.png> </home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/poster/logos.png>]
+ </home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/poster/bs_actif_mopsi.png> </home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/poster/callput.png> </home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/poster/volimpl1.png> </home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/poster/volimpl2.png> </home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/poster/logos.png>]
 \tf@nav=\write6
 \openout6 = `main.nav'.
 
@@ -1605,36 +1587,36 @@ Overfull \hbox (88.20334pt too wide) has occurred while \output is active
 \tf@snm=\write8
 \openout8 = `main.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 365.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 365.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 374.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 374.
  (/home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/poster/main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 365.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 365.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 374.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 374.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
 
 LaTeX Font Warning: Size substitutions with differences
-(Font)              up to 12.15pt have occurred.
+(Font)              up to 7.97pt have occurred.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 365.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 374.
  ) 
 Here is how much of TeX's memory you used:
- 23480 strings out of 493029
- 450592 string characters out of 6136234
- 626812 words of memory out of 5000000
- 26425 multiletter control sequences out of 15000+600000
- 93953 words of font info for 73 fonts, out of 8000000 for 9000
+ 23484 strings out of 493029
+ 450693 string characters out of 6136234
+ 633961 words of memory out of 5000000
+ 26428 multiletter control sequences out of 15000+600000
+ 94174 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,18n,71p,384b,1807s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,18n,71p,384b,1815s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmss17.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb>
-Output written on "/home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/poster/main.pdf" (1 page, 383236 bytes).
+Output written on "/home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/poster/main.pdf" (1 page, 427447 bytes).
 PDF statistics:
- 71 PDF objects out of 1000 (max. 8388607)
+ 72 PDF objects out of 1000 (max. 8388607)
  47 compressed objects within 1 object stream
  4 named destinations out of 1000 (max. 500000)
- 69 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 74 words of extra memory for PDF output out of 10000 (max. 10000000)
 

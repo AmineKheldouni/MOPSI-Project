@@ -2,6 +2,12 @@
 exec('/home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/code_ameliore.sci', -1)
 
 
+function [B] = brownien(N,couleur)
+   B = M(1 :N+1)/sqrt(N) ;
+   abscisse = 0 :1/N :1 ;
+   plot2d(abscisse,B,style=couleur)
+endfunction
+
 function [Y]= S_t(x,r,t_init,t,sigma)
   W_t = grand(1,1,"nor",0,t_init);
   h = t-t_init;
