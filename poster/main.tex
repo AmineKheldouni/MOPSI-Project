@@ -28,6 +28,11 @@
 \usepackage[francais]{babel}
 \usepackage[utf8]{inputenc}
 
+\usepackage[hang,small]{caption}
+\renewcommand{\captionfont}{\small}
+\renewcommand{\captionlabelfont}{\sffamily}
+\setlength{\captionmargin}{0pt}
+
 \usetheme{confposter} % Use the confposter theme supplied with this template
 
 \setbeamercolor{block title}{fg=ngreen,bg=white} % Colors of the block titles
@@ -112,7 +117,7 @@ Bernard \bsc{Lapeyre}, Professeur à l'Ecole des Ponts ParisTech et Chercheur au
 \vspace{2cm}
 \begin{block}{Notions financières}
   \begin{itemize}
-    \item une option est un produit dérivé qui établit un contrat entre un acheteur et un vendeur.
+    \item Une option est un produit dérivé qui établit un contrat entre un acheteur et un vendeur.
     \item $T$ est la maturité ou l'échéance. C'est la date à laquelle une opération doit être réalisée.
     \item $S_t$ : L'actif sous-jacent à l'instant t est l'actif sur lequel porte une option.
     \item $r$ : Le taux d'intérêt.
@@ -121,13 +126,16 @@ Bernard \bsc{Lapeyre}, Professeur à l'Ecole des Ponts ParisTech et Chercheur au
     \item \textit{Call} : Option d'achat d'un instrument financier.
     \item \textit{Put} : Option de vente de cet instrument.
   \end{itemize}
-  \vspace{2cm}
+  \vspace{1cm}
   \begin{alertblock}{Mise en situation}
     Etant donné les paramètres $\sigma$, $T$, $K$, $S_0$ et $r$ on voudrait calculer le prix d'un call ou d'un put sur le marché, pour un actif financier.
     \newline
-    Pour cela, on admet le modèle de \bsc{Black-Scholes}, qui donne sous certaines hypothèses le pix d'un \textit{Call} ou d'un \textit{Put}. Ce modèle est démontré dans le livre de Philippe  \bsc{BRIAND} sur le modèle de \bsc{Black-Scholes}.
+    Pour cela, on admet le modèle de \bsc{Black-Scholes}, qui donne sous certaines hypothèses le pix d'un \textit{Call} ou d'un \textit{Put}. Ce modèle est démontré dans le livre de John  \bsc{HULL} sur le modèle de \bsc{Black-Scholes}.
     \newline
   \end{alertblock}
+  Nous n'allons donc pas nous atarder sur la démonstration des modèles mathématiques sur lesquels se base la prédiction d'actifs financiers ou la calibration en finance. Néanmoins, nous montrons au fil de ce projet l'importance de tels modèles et la richesse de leur application dans le domaine de la finance.
+  \newline
+  Enfin, les figures et les résultats d'optimisation qui suivent sont issus d'un code SCILAB disponible sur GitHub : \url{https://github.com/AmineKheldouni/MOPSI-Project}
 \end{block}
 
 %----------------------------------------------------------------------------------------
@@ -166,7 +174,7 @@ Avec : \begin{itemize}
 \item $d_2 = d_1 - \sigma \sqrt{t}$
 \end{itemize}
 \end{alertblock}
-On fixe un nombre $P$ de modèles de Black-Scholes dont on va effectuer un mélange selon une certaine distribution de probabilités $(p_1,p_2,...,p_p)$.
+Soit $P$ un nombre de modèles de Black-Scholes dont on va effectuer un mélange selon une certaine distribution de probabilités $(p_1,p_2,...,p_p)$.
 \newline
 Ainsi on considère le \texit{Call}, à $K$, $r$ et $t$ fixés, de notre mélange comme suit :
 $$ C_m(\lambda, \sigma, p) = \sum^p_{i=1} p_i C(\lambda_i,K,r,t,\sigma_i) $$
@@ -183,6 +191,8 @@ $\lambda = (S_{0,1},...,S_{0,P}),\ \  \sigma = (\sigma_1,...,\sigma_P), \ \ p = 
 %----------------------------------------------------------------------------------------
 \begin{figure}[!H]
   \centerline{\includegraphics[scale=0.65]{bs_actif_mopsi.png}}
+  \label{actifs}
+  \caption{Tracés d'actifs pour différentes dérives et volatilités}
 
 \end{figure}
 
@@ -194,7 +204,7 @@ $\lambda = (S_{0,1},...,S_{0,P}),\ \  \sigma = (\sigma_1,...,\sigma_P), \ \ p = 
   Pour un call :
   \[{\color{red} \min \sum^M_{j=1} (C_{m,j}(\beta)-\alpha_j)^2} \]
   \vspace{-0.4cm}
-  \[ s.c. {\color{red} \sum^p_{i=1}p_i = 1} \]
+  \[  {\color{red} s.c. \sum^p_{i=1}p_i = 1} \]
 $\alpha_j$ étant le prix du Call calculé avec les valeurs de $\beta_*$ pour un \textit{Strike} $K_j$.
 \newline
 Il est important de comprendre que cette méthode d'optimisation prouve une certaine bijection entre les valeurs financières $\lambda$, $\sigma$ et la distribution $p$ du mélange et le prix d'une option (d'achat ou de vente) sur le marché.
@@ -208,7 +218,7 @@ Il est important de comprendre que cette méthode d'optimisation prouve une cert
 
 
 %----------------------------------------------------------------------------------------
-\vspace{0cm}
+\vspace{-1cm}
 \begin{block}{Résultats}
 
 \setbeamercolor{block title}{fg=ngreen,bg=dblue!10} % Colors of the block titles
@@ -223,7 +233,7 @@ Il est important de comprendre que cette méthode d'optimisation prouve une cert
 %----------------------------------------------------------------------------------------
 
 \begin{minipage}{0.49\textwidth}
-  \vspace{2cm}
+  \vspace{1cm}
   On prend $P = 2$
   \begin{itemize}
     \item $\lambda = (100,100)$
@@ -236,15 +246,14 @@ Il est important de comprendre que cette méthode d'optimisation prouve une cert
 
 \begin{minipage}{1.49\textwidth}
 \begin{figure}[!r]
-  \vspace{-10cm}
+  \vspace{-11.2cm}
   \hspace{-4cm}
   \includegraphics[scale=0.8]{callput.png}
+  \label{callput}
+  \caption{Courbes des prix d'option \\ (achat/vente) en fonction du \textit{Strike}}
 \end{figure}
 \end{minipage}
-\newline
-\newline
-\\
-  On trouve par la fonction d'optimisation non linéaire de SCILAB, \textit{optim}, un $\beta$ proche de l'optimum avec une erreur assez faible :
+  On trouve par la fonction d'optimisation non linéaire de SCILAB \textit{"optim"} un $\beta$ proche de l'optimum avec une erreur relative assez faible :
 %----------------------------------------------------------------------------------------
 
 \end{column} % End of column 2.1
@@ -255,7 +264,7 @@ Il est important de comprendre que cette méthode d'optimisation prouve une cert
 %	RESULTS
 %----------------------------------------------------------------------------------------
 
-
+\vspace{-1cm}
   $$ \beta_{approx} = (100.001,100.001,0.22,0.36,0.5,0.5) $$
   $$ \Rightarrow \ \ \ \ \epsilon = \frac{\|\beta_{approx}-\beta_* \|}{\|\beta_* \|} \approx 3.16 \times 10^{-4}$$
   \textbf{Les problèmes de calibration :}
@@ -295,10 +304,12 @@ Comme démontré dans le livre de Peter \bsc{TANKOV}, l'inversion de la formule 
   En utilisant un algorithme de dichotomie ou une méthode de Newton sur \bsc{SCILAB}, on obtient un graphe tridimensionnel appelé \textbf{la surface de la volatilité}.
     \begin{figure}
       \includegraphics[scale=0.80]{volimpl1.png}
+      \label{volimpl1}
+      \caption{Surface de volatilité implicite en fonction de l'exercice et de la maturité}
       \label{Exemple de surface de volatilité}
     \end{figure}
 \end{block}
-
+\vspace{-1cm}
 \begin{block}{Application à un actif :}
   \begin{minipage}{0.49\textwidth}
     On prend $M = 200$ et :
@@ -318,6 +329,8 @@ Comme démontré dans le livre de Peter \bsc{TANKOV}, l'inversion de la formule 
     \begin{figure}
       \vspace{-8.5cm}
       \includegraphics[scale=0.55]{volimpl2.png}
+      \label{volimpl2}
+      \caption{Surface de volatilité pour \\ des données réelles}
     \end{figure}
   \end{minipage}
 \end{block}
@@ -329,13 +342,13 @@ Comme démontré dans le livre de Peter \bsc{TANKOV}, l'inversion de la formule 
 %----------------------------------------------------------------------------------------
 %	REFERENCES
 %----------------------------------------------------------------------------------------
-
+\vspace{-1cm}
 \begin{block}{Références}
 
-  \begin{minipage}{0.6\textwidth}
+  \begin{minipage}{0.8\textwidth}
     \begin{itemize}
       \small
-        \item Philippe \bsc{BRIAND},  \textit{Le modèle de Black-Scholes}, 2003.
+        \item John \bsc{HULL},  \textit{Options, futures and other derivatives}, 2015.
         \item Peter \bsc{TANKOV}, \textit{Surface de volatilité}, 2015.
         \item Damiano \bsc{BRIGO}, Fabio \bsc{MERCURIO}, \textit{Lognormal-mixture dynamics and calibration to market volatility smiles}.
         \item Pr. Benoite \bsc{DE-SAPORTA}, \textit{TP sur les mouvements Brownien et Modèle de \bsc{Black-Scholes} (finance en temps continu)}
@@ -346,22 +359,12 @@ Comme démontré dans le livre de Peter \bsc{TANKOV}, l'inversion de la formule 
 
   \begin{center}
 
-      \vspace{-6cm}
-      \hspace{3cm}
-      \includegraphics[scale=0.2]{logos.png}
+      \vspace{-4cm}
+      \hspace{6cm}
+      \includegraphics[scale=0.16]{logos.png}
   \end{center}
     \end{minipage}
 \end{block}
-%\begin{frame}{Bibliographie}
-%\begin{itemize}
-
-%   \item \url{https://fr.wikipedia.org/wiki/Maturit%C3%A9_(finance)}
-%   \item \url{https://fr.wikipedia.org/wiki/Action_(finance)}
-%   \item \url{https://fr.wikipedia.org/wiki/Actif_sous-jacent}
-%   \item \url{https://fr.wikipedia.org/wiki/Taux_d%27int%C3%A9r%C3%AAt}
-%   \item \url{https://fr.wikipedia.org/wiki/Volatilit%C3%A9_(finance)}
-%\end{itemize}
-%\end{frame}
 
 %----------------------------------------------------------------------------------------
 

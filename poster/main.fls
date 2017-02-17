@@ -276,6 +276,10 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/base/ot1enc.dfu
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/ot1enc.dfu
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/omsenc.dfu
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/omsenc.dfu
+INPUT /usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
 INPUT /home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/poster/beamerthemeconfposter.sty
 INPUT /home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/poster/beamerthemeconfposter.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
@@ -439,22 +443,25 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmri12.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmcsc10.tfm
+INPUT /usr/share/texmf/tex/latex/lm/t1lmtt.fd
+INPUT /usr/share/texmf/tex/latex/lm/t1lmtt.fd
+INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmtt12.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmbx12.tfm
 INPUT /home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/poster/bs_actif_mopsi.png
 INPUT /home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/poster/bs_actif_mopsi.png
 INPUT /home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/poster/bs_actif_mopsi.png
-INPUT /home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/poster/callput.png
-INPUT /home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/poster/callput.png
-INPUT /home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/poster/callput.png
-INPUT /home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/poster/volimpl1.png
-INPUT /home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/poster/volimpl1.png
-INPUT /home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/poster/volimpl1.png
-INPUT /home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/poster/volimpl2.png
-INPUT /home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/poster/volimpl2.png
-INPUT /home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/poster/volimpl2.png
 INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmr17.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmcsc10.tfm
+INPUT /home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/poster/callput.png
+INPUT /home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/poster/callput.png
+INPUT /home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/poster/callput.png
 INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmri12.tfm
+INPUT /home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/poster/volimpl1.png
+INPUT /home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/poster/volimpl1.png
+INPUT /home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/poster/volimpl1.png
+INPUT /home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/poster/volimpl2.png
+INPUT /home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/poster/volimpl2.png
+INPUT /home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/poster/volimpl2.png
 INPUT /home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/poster/logos.png
 INPUT /home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/poster/logos.png
 INPUT /home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/poster/logos.png
@@ -466,9 +473,9 @@ OUTPUT /home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/poster/main.snm
 INPUT /home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/poster/main.aux
 INPUT /home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/poster/main.out
 INPUT /home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/poster/main.out
+INPUT /usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc
 INPUT /usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc
 INPUT /usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc
-INPUT /usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc
 INPUT /usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc
 INPUT /usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
@@ -479,3 +486,4 @@ INPUT /usr/share/texmf/fonts/type1/public/lm/lmr17.pfb
 INPUT /usr/share/texmf/fonts/type1/public/lm/lmri12.pfb
 INPUT /usr/share/texmf/fonts/type1/public/lm/lmss17.pfb
 INPUT /usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb
+INPUT /usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb

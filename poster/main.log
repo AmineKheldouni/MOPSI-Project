@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.10)  13 FEB 2017 11:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.10)  17 FEB 2017 10:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -956,7 +956,25 @@ Now handling font encoding PD1 ...
    defining Unicode char U+2026 (decimal 8230)
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
-)) (/home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/poster/beamerthemeconfposter.sty
+)) (/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+ (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2016/02/04 v1.7-139 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen191
+\captionmargin@=\dimen192
+\captionwidth=\dimen193
+\caption@tempdima=\dimen194
+\caption@indent=\dimen195
+\caption@parindent=\dimen196
+\caption@hangindent=\dimen197
+)
+\c@ContinuedFloat=\count169
+Package caption Info: beamer document class.
+Package caption Info: hyperref package is loaded.
+Package caption Info: Hyperref support is turned off
+(caption)             because hyperref has stopped early.
+) (/home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/poster/beamerthemeconfposter.sty
 Package: beamerthemeconfposter 
  (/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
 Package: pgf 2015/08/07 v3.0.1a (rcs-revision 1.15)
@@ -967,54 +985,55 @@ File: pgfmoduleshapes.code.tex 2014/03/21  (rcs-revision 1.35)
 File: pgfmoduleplot.code.tex 2015/08/03  (rcs-revision 1.13)
 ) (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
 Package: pgfcomp-version-0-65 2007/07/03 v3.0.1a (rcs-revision 1.7)
-\pgf@nodesepstart=\dimen191
-\pgf@nodesepend=\dimen192
+\pgf@nodesepstart=\dimen198
+\pgf@nodesepend=\dimen199
 ) (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
 Package: pgfcomp-version-1-18 2007/07/23 v3.0.1a (rcs-revision 1.1)
-)) (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (/usr/share/texlive/texmf-dist/tex/latex/pgf/math/pgfmath.sty
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+)) (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (/usr/share/texlive/texmf-dist/tex/latex/pgf/math/pgfmath.sty (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
 Package: pgffor 2013/12/13 v3.0.1a (rcs-revision 1.25)
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
-\pgffor@iter=\dimen193
-\pgffor@skip=\dimen194
+\pgffor@iter=\dimen256
+\pgffor@skip=\dimen257
 \pgffor@stack=\toks48
 \pgffor@toks=\toks49
 )) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
 Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
-\pgf@plot@mark@count=\count169
-\pgfplotmarksize=\dimen195
+\pgf@plot@mark@count=\count170
+\pgfplotmarksize=\dimen258
 )
-\tikz@lastx=\dimen196
-\tikz@lasty=\dimen197
-\tikz@lastxsaved=\dimen198
-\tikz@lastysaved=\dimen199
-\tikzleveldistance=\dimen256
-\tikzsiblingdistance=\dimen257
+\tikz@lastx=\dimen259
+\tikz@lasty=\dimen260
+\tikz@lastxsaved=\dimen261
+\tikz@lastysaved=\dimen262
+\tikzleveldistance=\dimen263
+\tikzsiblingdistance=\dimen264
 \tikz@figbox=\box54
 \tikz@figbox@bg=\box55
 \tikz@tempbox=\box56
 \tikz@tempbox@bg=\box57
-\tikztreelevel=\count170
-\tikznumberofchildren=\count171
-\tikznumberofcurrentchild=\count172
-\tikz@fig@count=\count173
+\tikztreelevel=\count171
+\tikznumberofchildren=\count172
+\tikznumberofcurrentchild=\count173
+\tikz@fig@count=\count174
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
-\pgfmatrixcurrentrow=\count174
-\pgfmatrixcurrentcolumn=\count175
-\pgf@matrix@numberofcolumns=\count176
+\pgfmatrixcurrentrow=\count175
+\pgfmatrixcurrentcolumn=\count176
+\pgf@matrix@numberofcolumns=\count177
 )
-\tikz@expandcount=\count177
+\tikz@expandcount=\count178
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
 ))) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryarrows.code.tex
 File: tikzlibraryarrows.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
 File: pgflibraryarrows.code.tex 2013/09/23 v3.0.1a (rcs-revision 1.16)
-\arrowsize=\dimen258
-)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarybackgrounds.code.tex
+\arrowsize=\dimen265
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarybackgrounds.code.tex
 File: tikzlibrarybackgrounds.code.tex 2013/07/18 v3.0.1a (rcs-revision 1.3)
 \pgf@layerbox@background=\box58
 \pgf@layerboxsaved@background=\box59
@@ -1023,8 +1042,7 @@ Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
  (/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def
 File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
-))
-(/usr/share/texmf/tex/latex/lm/lmodern.sty
+)) (/usr/share/texmf/tex/latex/lm/lmodern.sty
 Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
@@ -1065,7 +1083,7 @@ LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
 (Font)                  OMX/lmex/m/n --> OMX/cmex/m/n on input line 57.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  OMX/lmex/m/n --> OMX/cmex/m/n on input line 57.
-\big@size=\dimen259
+\big@size=\dimen266
 ) (/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
 Package: textcomp 2005/09/27 v1.99g Standard LaTeX package
 Package textcomp Info: Sub-encoding information:
@@ -1250,88 +1268,88 @@ Package: everysel 2011/10/28 v1.2 EverySelectfont Package (MS)
 \threecolwid=\skip83
  (/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2005/04/14 v1.61803 publication quality tables
-\heavyrulewidth=\dimen260
-\lightrulewidth=\dimen261
-\cmidrulewidth=\dimen262
-\belowrulesep=\dimen263
-\belowbottomsep=\dimen264
-\aboverulesep=\dimen265
-\abovetopsep=\dimen266
-\cmidrulesep=\dimen267
-\cmidrulekern=\dimen268
-\defaultaddspace=\dimen269
-\@cmidla=\count178
-\@cmidlb=\count179
-\@aboverulesep=\dimen270
-\@belowrulesep=\dimen271
-\@thisruleclass=\count180
-\@lastruleclass=\count181
-\@thisrulewidth=\dimen272
+\heavyrulewidth=\dimen267
+\lightrulewidth=\dimen268
+\cmidrulewidth=\dimen269
+\belowrulesep=\dimen270
+\belowbottomsep=\dimen271
+\aboverulesep=\dimen272
+\abovetopsep=\dimen273
+\cmidrulesep=\dimen274
+\cmidrulekern=\dimen275
+\defaultaddspace=\dimen276
+\@cmidla=\count179
+\@cmidlb=\count180
+\@aboverulesep=\dimen277
+\@belowrulesep=\dimen278
+\@thisruleclass=\count181
+\@lastruleclass=\count182
+\@thisrulewidth=\dimen279
 )
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\begingroup' on input line 73.
+(hyperref)                removing `\begingroup' on input line 78.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\endgroup' on input line 73.
+(hyperref)                removing `\endgroup' on input line 78.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\\' on input line 73.
+(hyperref)                removing `\\' on input line 78.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\new@ifnextchar' on input line 73.
+(hyperref)                removing `\new@ifnextchar' on input line 78.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\\' on input line 73.
+(hyperref)                removing `\\' on input line 78.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\new@ifnextchar' on input line 73.
+(hyperref)                removing `\new@ifnextchar' on input line 78.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\begingroup' on input line 73.
+(hyperref)                removing `\begingroup' on input line 78.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\endgroup' on input line 73.
+(hyperref)                removing `\endgroup' on input line 78.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\begingroup' on input line 79.
+(hyperref)                removing `\begingroup' on input line 84.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\endgroup' on input line 79.
+(hyperref)                removing `\endgroup' on input line 84.
 
 (/home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/poster/main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 79.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 79.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 84.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 84.
  (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Try loading font information for T1+lmss on input line 79.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Try loading font information for T1+lmss on input line 84.
  (/usr/share/texmf/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -1371,16 +1389,16 @@ File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count182
-\scratchdimen=\dimen273
+\scratchcounter=\count183
+\scratchdimen=\dimen280
 \scratchbox=\box60
-\nofMPsegments=\count183
-\nofMParguments=\count184
+\nofMPsegments=\count184
+\nofMParguments=\count185
 \everyMPshowfont=\toks50
-\MPscratchCnt=\count185
-\MPscratchDim=\dimen274
-\MPnumerator=\count186
-\makeMPintoPDFobject=\count187
+\MPscratchCnt=\count186
+\MPscratchDim=\dimen281
+\MPnumerator=\count187
+\makeMPintoPDFobject=\count188
 \everyMPtoPDFconversion=\toks51
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
@@ -1394,17 +1412,17 @@ Package grfext Info: Graphics extension search list:
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 )) ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box61
-Package hyperref Info: Link coloring OFF on input line 79.
+Package hyperref Info: Link coloring OFF on input line 84.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
  (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count188
+\c@section@level=\count189
 )
-LaTeX Info: Redefining \ref on input line 79.
-LaTeX Info: Redefining \pageref on input line 79.
-LaTeX Info: Redefining \nameref on input line 79.
+LaTeX Info: Redefining \ref on input line 84.
+LaTeX Info: Redefining \pageref on input line 84.
+LaTeX Info: Redefining \nameref on input line 84.
  (/home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/poster/main.out) (/home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/poster/main.out)
 \@outlinefile=\write5
 \openout5 = `main.out'.
@@ -1423,85 +1441,100 @@ Dictionary: translator-numbers-dictionary, Language: English
 ) (/usr/share/texlive/texmf-dist/tex/latex/beamer/translator/dicts/translator-theorem-dictionary/translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \includegraphics on input line 79.
-LaTeX Info: Redefining \degres on input line 79.
-LaTeX Info: Redefining \dots on input line 79.
-LaTeX Info: Redefining \up on input line 79.
+LaTeX Info: Redefining \includegraphics on input line 84.
+LaTeX Info: Redefining \degres on input line 84.
+LaTeX Info: Redefining \dots on input line 84.
+LaTeX Info: Redefining \up on input line 84.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
  ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 79.
+LaTeX Info: Redefining \selectfont on input line 84.
  (/home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/poster/main.nav)
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 79.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 84.
  (/usr/share/texmf/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 
 LaTeX Font Warning: Font shape `T1/lmr/bx/sc' undefined
-(Font)              using `T1/lmr/bx/n' instead on input line 79.
+(Font)              using `T1/lmr/bx/n' instead on input line 84.
 
 
-/home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/poster/main.tex:79: LaTeX Error: There's no line here to end.
+/home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/poster/main.tex:84: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.79 \begin{document}
+l.84 \begin{document}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-LaTeX Font Info:    Calculating math sizes for size <15.84> on input line 79.
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 79.
+LaTeX Font Info:    Calculating math sizes for size <15.84> on input line 84.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 84.
 (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 79.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 84.
  (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 79.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 84.
  (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 
 LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <15.84> not available
-(Font)              size <14.4> substituted on input line 79.
+(Font)              size <14.4> substituted on input line 84.
 
 LaTeX Font Info:    External font `cmex7' loaded for size
-(Font)              <7.92> on input line 79.
-LaTeX Font Info:    Try loading font information for TS1+lmss on input line 372.
+(Font)              <7.92> on input line 84.
+LaTeX Font Info:    Try loading font information for TS1+lmss on input line 385.
 (/usr/share/texmf/tex/latex/lm/ts1lmss.fd
 File: ts1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Calculating math sizes for size <32.85> on input line 372.
+LaTeX Font Info:    Calculating math sizes for size <32.85> on input line 385.
 
 
 LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <32.85> not available
-(Font)              size <24.88> substituted on input line 372.
+(Font)              size <24.88> substituted on input line 385.
 
 
 LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <22.9949> not available
-(Font)              size <24.88> substituted on input line 372.
+(Font)              size <24.88> substituted on input line 385.
 
 
 LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <16.425> not available
-(Font)              size <17.28> substituted on input line 372.
+(Font)              size <17.28> substituted on input line 385.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 372--372
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 372--372
+Underfull \hbox (badness 10000) in paragraph at lines 385--385
 
  []
 
-/home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/poster/main.tex:372: Undefined control sequence.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 385.
+(/usr/share/texmf/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+Underfull \hbox (badness 1924) in paragraph at lines 385--385
+\T1/lmr/m/n/32.85 Enfin, les fi-gures et les r�-sul-tats d'op-ti-mi-sa-tion qui
+ []
+
+
+Underfull \hbox (badness 7907) in paragraph at lines 385--385
+\T1/lmr/m/n/32.85 suivent sont is-sus d'un code SCI-LAB dis-po-nible
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 385--385
+
+ []
+
+/home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/poster/main.tex:385: Undefined control sequence.
 \beamer@doifinframe ...si on considère le \texit 
                                                   {Call}, à $K$, $r$ et $t$...
-l.372 \end{frame}
+l.385 \end{frame}
                   % End of the enclosing frame
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1509,62 +1542,67 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-<bs_actif_mopsi.png, id=15, 1369.115pt x 738.76pt>
+<bs_actif_mopsi.png, id=16, 1369.115pt x 738.76pt>
 File: bs_actif_mopsi.png Graphic file (type png)
  <use bs_actif_mopsi.png>
-Package pdftex.def Info: bs_actif_mopsi.png used on input line 372.
+Package pdftex.def Info: bs_actif_mopsi.png used on input line 385.
 (pdftex.def)             Requested size: 889.91422pt x 480.1883pt.
- <callput.png, id=16, 586.19pt x 455.7025pt>
+
+
+LaTeX Font Warning: Font shape `T1/lmss/m/sc' in size <27.37> not available
+(Font)              Font shape `T1/lmr/m/sc' tried instead on input line 385.
+
+<callput.png, id=17, 586.19pt x 455.7025pt>
 File: callput.png Graphic file (type png)
  <use callput.png>
-Package pdftex.def Info: callput.png used on input line 372.
+Package pdftex.def Info: callput.png used on input line 385.
 (pdftex.def)             Requested size: 468.95264pt x 364.56248pt.
 
-Overfull \hbox (373.96014pt too wide) in paragraph at lines 372--372
-[]$[]$  
+Overfull \hbox (373.96014pt too wide) in paragraph at lines 385--385
+[]$[]$ 
  []
 
 
-LaTeX Warning: Command \' invalid in math mode on input line 372.
+LaTeX Warning: Command \' invalid in math mode on input line 385.
 
-<volimpl1.png, id=17, 898.35625pt x 606.265pt>
+<volimpl1.png, id=18, 898.35625pt x 606.265pt>
 File: volimpl1.png Graphic file (type png)
  <use volimpl1.png>
-Package pdftex.def Info: volimpl1.png used on input line 372.
+Package pdftex.def Info: volimpl1.png used on input line 385.
 (pdftex.def)             Requested size: 718.68597pt x 485.01266pt.
- <volimpl2.png, id=18, 879.285pt x 498.86375pt>
+ <volimpl2.png, id=19, 879.285pt x 498.86375pt>
 File: volimpl2.png Graphic file (type png)
  <use volimpl2.png>
-Package pdftex.def Info: volimpl2.png used on input line 372.
+Package pdftex.def Info: volimpl2.png used on input line 385.
 (pdftex.def)             Requested size: 483.60825pt x 274.37592pt.
 
-Overfull \hbox (373.96014pt too wide) in paragraph at lines 372--372
+Overfull \hbox (373.96014pt too wide) in paragraph at lines 385--385
 []$[]$ 
  []
 
-<logos.png, id=19, 1061.9675pt x 1390.19376pt>
+<logos.png, id=20, 1061.9675pt x 1390.19376pt>
 File: logos.png Graphic file (type png)
  <use logos.png>
-Package pdftex.def Info: logos.png used on input line 372.
-(pdftex.def)             Requested size: 212.38974pt x 278.03383pt.
+Package pdftex.def Info: logos.png used on input line 385.
+(pdftex.def)             Requested size: 169.91826pt x 222.43555pt.
 
-Overfull \hbox (373.96014pt too wide) in paragraph at lines 372--372
+Overfull \hbox (373.96014pt too wide) in paragraph at lines 385--385
 []$[]$ 
  []
 
 
-Overfull \hbox (18.7236pt too wide) detected at line 372
+Overfull \hbox (18.7236pt too wide) detected at line 385
 [][][] [][][][][][][][][] [][][][][][][][][] [][][][][][][][][] [][][][][][][][][] [][][][][][][]  [][] [][][][][][][] 
  []
 
 
-/home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/poster/main.tex:372: LaTeX Error: There's no line here to end.
+/home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/poster/main.tex:385: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.372 \end{frame}
+l.385 \end{frame}
                   % End of the enclosing frame
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -1587,11 +1625,11 @@ Overfull \hbox (88.20334pt too wide) has occurred while \output is active
 \tf@snm=\write8
 \openout8 = `main.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 374.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 374.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 387.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 387.
  (/home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/poster/main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 374.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 374.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 387.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 387.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
@@ -1602,21 +1640,21 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 374.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 387.
  ) 
 Here is how much of TeX's memory you used:
- 23484 strings out of 493029
- 450693 string characters out of 6136234
- 633961 words of memory out of 5000000
- 26428 multiletter control sequences out of 15000+600000
- 94174 words of font info for 74 fonts, out of 8000000 for 9000
+ 24559 strings out of 493029
+ 470154 string characters out of 6136234
+ 655489 words of memory out of 5000000
+ 27489 multiletter control sequences out of 15000+600000
+ 94492 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,18n,71p,384b,1815s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmss17.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb>
-Output written on "/home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/poster/main.pdf" (1 page, 427447 bytes).
+ 60i,18n,96p,384b,1815s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmss17.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb>
+Output written on "/home/amine/Documents/2A/Projet MOPSI/MOPSI-Project/poster/main.pdf" (1 page, 452253 bytes).
 PDF statistics:
- 72 PDF objects out of 1000 (max. 8388607)
- 47 compressed objects within 1 object stream
- 4 named destinations out of 1000 (max. 500000)
+ 86 PDF objects out of 1000 (max. 8388607)
+ 60 compressed objects within 1 object stream
+ 8 named destinations out of 1000 (max. 500000)
  74 words of extra memory for PDF output out of 10000 (max. 10000000)
 
